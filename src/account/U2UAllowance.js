@@ -84,10 +84,10 @@ export default class U2UAllowance {
             ownerAccountId:
                 allowance.owner != null
                     ? AccountId._fromProtobuf(
-                        /**@type {HashgraphProto.proto.IAccountID}*/ (
-                            allowance.owner
-                        )
-                    )
+                          /**@type {HashgraphProto.proto.IAccountID}*/ (
+                              allowance.owner
+                          )
+                      )
                     : null,
             amount: U2U.fromTinyU2U(
                 allowance.amount != null ? allowance.amount : 0

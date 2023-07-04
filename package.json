@@ -1,10 +1,11 @@
 {
     "name": "@u2u/sdk",
-    "version": "2.29.0",
-    "description": "Hedera™ Hashgraph SDK",
+    "version": "2.30.0",
+    "description": "U2U SDK",
     "types": "./lib/index.d.ts",
     "main": "./lib/index.cjs",
     "module": "./src/index.js",
+    "private": false,
     "react-native": {
         "./lib/index.cjs": "./src/native.js",
         "./src/encoding/hex.js": "./src/encoding/hex.native.js",
@@ -58,7 +59,7 @@
         "@ethersproject/rlp": "^5.7.0",
         "@grpc/grpc-js": "1.8.2",
         "@hashgraph/cryptography": "1.4.6",
-        "@u2u/proto": "2.14.0",
+        "@u2u/proto": "2.14.1",
         "axios": "^1.3.1",
         "bignumber.js": "^9.1.1",
         "crypto-js": "^4.1.1",

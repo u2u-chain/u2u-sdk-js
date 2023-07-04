@@ -66,14 +66,12 @@ describe("Transaction", function () {
         const transaction = Transaction.fromBytes(hex.decode(hexBytes));
 
         expect(
-            transaction.U2UTransfers
-                .get(new AccountId(476260))
+            transaction.U2UTransfers.get(new AccountId(476260))
                 .toTinyU2U()
                 .toString()
         ).to.be.equal(new U2U(1).negated().toTinyU2U().toString());
         expect(
-            transaction.U2UTransfers
-                .get(new AccountId(476267))
+            transaction.U2UTransfers.get(new AccountId(476267))
                 .toTinyU2U()
                 .toString()
         ).to.be.equal(new U2U(1).toTinyU2U().toString());

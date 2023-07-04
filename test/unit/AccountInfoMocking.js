@@ -73,14 +73,12 @@ describe("AccountInfoMocking", function () {
                         const U2UTransfers = transaction.U2UTransfers;
                         expect(U2UTransfers.size).to.be.equal(2);
                         expect(
-                            U2UTransfers
-                                .get(client.operatorAccountId)
+                            U2UTransfers.get(client.operatorAccountId)
                                 .toTinyU2U()
                                 .toInt()
                         ).to.be.lt(0);
                         expect(
-                            U2UTransfers
-                                .get(Object.values(client.network)[0])
+                            U2UTransfers.get(Object.values(client.network)[0])
                                 .toTinyU2U()
                                 .toInt()
                         ).to.be.gt(0);

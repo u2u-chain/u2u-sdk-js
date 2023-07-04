@@ -110,9 +110,7 @@ export default class AccountBalance {
         }
 
         return new AccountBalance({
-            u2us: U2U.fromTinyU2U(
-                /** @type {Long} */ (accountBalance.balance)
-            ),
+            u2us: U2U.fromTinyU2U(/** @type {Long} */ (accountBalance.balance)),
             tokens: tokenBalances,
             tokenDecimals,
         });

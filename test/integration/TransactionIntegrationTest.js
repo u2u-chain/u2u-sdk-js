@@ -118,10 +118,7 @@ describe("TransactionIntegration", function () {
 
         const transaction = new TransferTransaction()
             .setNodeAccountIds([nodeAccountId])
-            .addU2UTransfer(
-                env.client.operatorAccountId,
-                new U2U(1).negated()
-            )
+            .addU2UTransfer(env.client.operatorAccountId, new U2U(1).negated())
             .addU2UTransfer(new AccountId(3), new U2U(1))
             .freezeWith(env.client);
 

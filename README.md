@@ -1,4 +1,4 @@
-# Hedera™ Hashgraph JavaScript SDK
+# Unicorn Ultra (U2U) JavaScript SDK
 
 [![](https://img.shields.io/discord/373889138199494658)](https://discord.com/channels/373889138199494658/616725732650909710)
 [![Docs](https://img.shields.io/badge/docs-%F0%9F%93%84-blue)](https://docs.hedera.com/guides/getting-started/javascript/environment-set-up)
@@ -25,11 +25,11 @@ $ pnpm add @u2u/sdk
 ```
 ## React Native Support
 
-The Hedera JavaScript SDK supports the following:
+The U2U JavaScript SDK supports the following:
 
 * React Native with Expo
 
-The Hedera JavaScript SDK does not currently support the following:
+The U2U JavaScript SDK does not currently support the following:
 
 * React Native Bare
 

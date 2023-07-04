@@ -58,9 +58,7 @@ export default class Transfer {
          * The amount of tinybars that the account sends(negative) or receives(positive).
          */
         this.amount =
-            props.amount instanceof U2U
-                ? props.amount
-                : new U2U(props.amount);
+            props.amount instanceof U2U ? props.amount : new U2U(props.amount);
 
         this.isApproved = props.isApproved;
     }

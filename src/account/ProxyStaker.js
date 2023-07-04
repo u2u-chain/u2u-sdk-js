@@ -56,9 +56,7 @@ export default class ProxyStaker {
          * @readonly
          */
         this.amount =
-            props.amount instanceof U2U
-                ? props.amount
-                : new U2U(props.amount);
+            props.amount instanceof U2U ? props.amount : new U2U(props.amount);
 
         Object.freeze(this);
     }

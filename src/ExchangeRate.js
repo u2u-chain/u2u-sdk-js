@@ -71,7 +71,7 @@ export default class ExchangeRate {
      */
     static _fromProtobuf(rate) {
         return new ExchangeRate({
-            u2us: /** @type {number} */ (rate.hbarEquiv),
+            u2us: /** @type {number} */ (rate.u2uEquiv),
             cents: /** @type {number} */ (rate.centEquiv),
             expirationTime: new Date(
                 rate.expirationTime != null
@@ -92,7 +92,7 @@ export default class ExchangeRate {
     _toProtobuf() {
         // TODO: convert hbar equiv
         return {
-            hbarEquiv: this.u2us,
+            u2uEquiv: this.u2us,
             centEquiv: this.cents,
             expirationTime: {
                 seconds: Long.fromNumber(
