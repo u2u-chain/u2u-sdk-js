@@ -24,10 +24,10 @@ dependencies:
     specifier: 1.4.6
     version: 1.4.6(expo@47.0.14)
   '@u2u/proto':
-    specifier: 2.12.0
-    version: 2.12.0
+    specifier: 2.13.0
+    version: 2.13.0
   axios:
-    specifier: ^1.4.0
+    specifier: ^1.3.1
     version: 1.4.0
   bignumber.js:
     specifier: ^9.1.1
@@ -36,7 +36,7 @@ dependencies:
     specifier: ^4.1.1
     version: 4.1.1
   js-base64:
-    specifier: ^3.7.5
+    specifier: ^3.7.4
     version: 3.7.5
   long:
     specifier: ^4.0.0
@@ -48,7 +48,7 @@ dependencies:
     specifier: ^10.0.0
     version: 10.0.0
   protobufjs:
-    specifier: ^7.2.4
+    specifier: ^7.1.2
     version: 7.2.4
   utf8:
     specifier: ^3.0.0
@@ -56,13 +56,13 @@ dependencies:
 
 devDependencies:
   '@babel/cli':
-    specifier: ^7.22.6
+    specifier: ^7.20.7
     version: 7.22.6(@babel/core@7.22.6)
   '@babel/core':
-    specifier: ^7.22.6
+    specifier: ^7.20.12
     version: 7.22.6
   '@babel/eslint-parser':
-    specifier: ^7.22.6
+    specifier: ^7.19.1
     version: 7.22.6(@babel/core@7.22.6)(eslint@8.44.0)
   '@babel/plugin-proposal-export-namespace-from':
     specifier: ^7.18.9
@@ -71,25 +71,25 @@ devDependencies:
     specifier: ^7.8.3
     version: 7.8.3(@babel/core@7.22.6)
   '@babel/plugin-transform-export-namespace-from':
-    specifier: ^7.22.5
+    specifier: ^7.22.3
     version: 7.22.5(@babel/core@7.22.6)
   '@babel/plugin-transform-modules-commonjs':
-    specifier: ^7.22.5
+    specifier: ^7.21.5
     version: 7.22.5(@babel/core@7.22.6)
   '@babel/preset-env':
-    specifier: ^7.22.6
+    specifier: ^7.22.5
     version: 7.22.6(@babel/core@7.22.6)
   '@babel/register':
-    specifier: ^7.22.5
+    specifier: ^7.18.9
     version: 7.22.5(@babel/core@7.22.6)
   '@grpc/proto-loader':
-    specifier: ^0.7.7
+    specifier: ^0.7.4
     version: 0.7.7
   '@playwright/test':
-    specifier: ^1.35.1
+    specifier: ^1.30.0
     version: 1.35.1
   '@types/chai':
-    specifier: ^4.3.5
+    specifier: ^4.3.4
     version: 4.3.5
   '@types/crypto-js':
     specifier: ^4.1.1
@@ -101,16 +101,16 @@ devDependencies:
     specifier: ^10.0.1
     version: 10.0.1
   '@types/node':
-    specifier: ^18.16.19
+    specifier: ^18.11.18
     version: 18.16.19
   '@types/utf8':
     specifier: ^3.0.1
     version: 3.0.1
   '@typescript-eslint/eslint-plugin':
-    specifier: ^5.61.0
+    specifier: ^5.48.2
     version: 5.61.0(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(typescript@4.9.5)
   '@typescript-eslint/parser':
-    specifier: ^5.61.0
+    specifier: ^5.48.2
     version: 5.61.0(eslint@8.44.0)(typescript@4.9.5)
   babel-plugin-dynamic-import-node:
     specifier: ^2.3.3
@@ -119,7 +119,7 @@ devDependencies:
     specifier: ^0.2.0
     version: 0.2.0
   c8:
-    specifier: ^7.14.0
+    specifier: ^7.12.0
     version: 7.14.0
   chai:
     specifier: ^4.3.7
@@ -131,22 +131,22 @@ devDependencies:
     specifier: ^3.8.3
     version: 3.8.3
   dotenv:
-    specifier: ^16.3.1
+    specifier: ^16.0.3
     version: 16.3.1
   dpdm:
-    specifier: ^3.13.1
+    specifier: ^3.11.0
     version: 3.13.1
   eslint:
-    specifier: ^8.44.0
+    specifier: ^8.32.0
     version: 8.44.0
   eslint-plugin-chai-expect:
     specifier: ^3.0.0
     version: 3.0.0(eslint@8.44.0)
   eslint-plugin-compat:
-    specifier: ^4.1.4
+    specifier: ^4.0.2
     version: 4.1.4(eslint@8.44.0)
   eslint-plugin-deprecation:
-    specifier: ^1.4.1
+    specifier: ^1.3.3
     version: 1.4.1(eslint@8.44.0)(typescript@4.9.5)
   eslint-plugin-ie11:
     specifier: ^1.0.0
@@ -155,7 +155,7 @@ devDependencies:
     specifier: ^2.27.5
     version: 2.27.5(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)
   eslint-plugin-jsdoc:
-    specifier: ^39.9.1
+    specifier: ^39.6.7
     version: 39.9.1(eslint@8.44.0)
   eslint-plugin-mocha:
     specifier: ^10.1.0
@@ -164,7 +164,7 @@ devDependencies:
     specifier: ^11.1.0
     version: 11.1.0(eslint@8.44.0)
   expo:
-    specifier: ^47.0.14
+    specifier: ^47.0.13
     version: 47.0.14(@babel/core@7.22.6)
   geckodriver:
     specifier: ^3.2.0
@@ -182,16 +182,16 @@ devDependencies:
     specifier: ^15.1.0
     version: 15.1.0
   prettier:
-    specifier: ^2.8.8
+    specifier: ^2.8.3
     version: 2.8.8
   typedoc:
-    specifier: ^0.23.28
+    specifier: ^0.23.24
     version: 0.23.28(typescript@4.9.5)
   typescript:
-    specifier: ^4.9.5
+    specifier: ^4.9.4
     version: 4.9.5
   vite:
-    specifier: ^4.3.9
+    specifier: ^4.0.4
     version: 4.3.9(@types/node@18.16.19)
   yalc:
     specifier: 1.0.0-pre.53
@@ -2796,8 +2796,8 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@u2u/proto@2.12.0:
-    resolution: {integrity: sha512-K6QbdgiKXaawNBxNXMPdwThuxOiXPebCPrfBo3rCY5mRKmjFvLs6gH6AeG4e3hkVZGzk/WPSV87UEPOfEvd16w==}
+  /@u2u/proto@2.13.0:
+    resolution: {integrity: sha512-BioLMuzfn0a9I0fWwM6nCcBLNELY+DROtcxTWokv2rI4Cr0SrNZ7Izf227bsF9G1oTTQsNT2bcTGz+3Hei1PHA==}
     engines: {node: '>=10.0.0'}
     dependencies:
       long: 4.0.0
@@ -3303,7 +3303,7 @@ packages:
       glob: 7.2.3
       infer-owner: 1.0.4
       lru-cache: 6.0.0
-      minipass: 3.1.6
+      minipass: 3.3.6
       minipass-collect: 1.0.2
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
@@ -6044,19 +6044,19 @@ packages:
     resolution: {integrity: sha512-6T6lH0H8OG9kITm/Jm6tdooIbogG9e0tLgpY6mphXSm/A9u8Nq1ryBG+Qspiub9LjWlBPsPS3tWQ/Botq4FdxA==}
     engines: {node: '>= 8'}
     dependencies:
-      minipass: 3.1.6
+      minipass: 3.3.6
 
   /minipass-flush@1.0.5:
     resolution: {integrity: sha512-JmQSYYpPUqX5Jyn1mXaRwOda1uQ8HP5KAT/oDSLCzt1BYRhQU0/hDtsB1ufZfEEzMZ9aAVmsBw8+FWsIXlClWw==}
     engines: {node: '>= 8'}
     dependencies:
-      minipass: 3.1.6
+      minipass: 3.3.6
 
   /minipass-pipeline@1.2.4:
     resolution: {integrity: sha512-xuIq7cIOt09RPRJ19gdi4b+RiNvDFYe5JH+ggNvBqGqpQXcru3PcRmOZuHBKWK1Txf9+cQ+HMVN4d6z46LZP7A==}
     engines: {node: '>=8'}
     dependencies:
-      minipass: 3.1.6
+      minipass: 3.3.6
 
   /minipass@3.1.6:
     resolution: {integrity: sha512-rty5kpw9/z8SX9dmxblFA6edItUmwJgMeYDZRrwlIVN27i8gysGbznJwUggw2V/FVqFSDdWy040ZPS811DYAqQ==}
@@ -7399,7 +7399,7 @@ packages:
     resolution: {integrity: sha512-97qShzy1AiyxvPNIkLWoGua7xoQzzPjQ0HAH4B0rWKo7SZ6USuPcrUiAFrws0UH8RrbWmgq3LMTObhPIHbbBeQ==}
     engines: {node: '>= 8'}
     dependencies:
-      minipass: 3.1.6
+      minipass: 3.3.6
 
   /statuses@1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
