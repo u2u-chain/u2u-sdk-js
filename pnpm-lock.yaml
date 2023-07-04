@@ -24,8 +24,8 @@ dependencies:
     specifier: 1.4.6
     version: 1.4.6(expo@47.0.14)
   '@u2u/proto':
-    specifier: 2.13.0
-    version: 2.13.0
+    specifier: 2.14.0
+    version: 2.14.0
   axios:
     specifier: ^1.3.1
     version: 1.4.0
@@ -2796,8 +2796,8 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@u2u/proto@2.13.0:
-    resolution: {integrity: sha512-BioLMuzfn0a9I0fWwM6nCcBLNELY+DROtcxTWokv2rI4Cr0SrNZ7Izf227bsF9G1oTTQsNT2bcTGz+3Hei1PHA==}
+  /@u2u/proto@2.14.0:
+    resolution: {integrity: sha512-2CijAc7kVqufKt+GRpyYGpTM7pl1/erzPBEK22zFGwD0y4nXVXZHhyADvaR8ma5e+JEkV4owy27qreGGkM6Ujg==}
     engines: {node: '>=10.0.0'}
     dependencies:
       long: 4.0.0
