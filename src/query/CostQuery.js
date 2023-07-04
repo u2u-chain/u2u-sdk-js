@@ -23,7 +23,7 @@ import U2U from "../U2U.js";
 import Executable from "../Executable.js";
 import AccountId from "../account/AccountId.js";
 import { _makePaymentTransaction, COST_QUERY } from "./Query.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 /**
  * @typedef {import("../channel/Channel.js").default} Channel

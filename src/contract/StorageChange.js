@@ -18,7 +18,7 @@
  * ‍
  */
 
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 /**
  * @deprecated - Use mirror node for contract traceability instead

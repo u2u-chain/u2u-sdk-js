@@ -23,7 +23,7 @@ import U2U from "../U2U.js";
 import TokenId from "../token/TokenId.js";
 import TokenBalanceMap from "./TokenBalanceMap.js";
 import TokenDecimalMap from "./TokenDecimalMap.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 /**
  * @typedef {object} TokenBalanceJson

@@ -24,13 +24,13 @@ import ProxyStaker from "./ProxyStaker.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IQuery} HashgraphProto.proto.IQuery
- * @typedef {import("@hashgraph/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
- * @typedef {import("@hashgraph/proto").proto.IResponse} HashgraphProto.proto.IResponse
- * @typedef {import("@hashgraph/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
- * @typedef {import("@hashgraph/proto").proto.ICryptoGetStakersQuery} HashgraphProto.proto.ICryptoGetStakersQuery
- * @typedef {import("@hashgraph/proto").proto.ICryptoGetStakersResponse} HashgraphProto.proto.ICryptoGetStakersResponse
- * @typedef {import("@hashgraph/proto").proto.IAllProxyStakers} HashgraphProto.proto.IAllProxyStakers
+ * @typedef {import("@u2u/proto").proto.IQuery} HashgraphProto.proto.IQuery
+ * @typedef {import("@u2u/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
+ * @typedef {import("@u2u/proto").proto.IResponse} HashgraphProto.proto.IResponse
+ * @typedef {import("@u2u/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
+ * @typedef {import("@u2u/proto").proto.ICryptoGetStakersQuery} HashgraphProto.proto.ICryptoGetStakersQuery
+ * @typedef {import("@u2u/proto").proto.ICryptoGetStakersResponse} HashgraphProto.proto.ICryptoGetStakersResponse
+ * @typedef {import("@u2u/proto").proto.IAllProxyStakers} HashgraphProto.proto.IAllProxyStakers
  */
 
 /**

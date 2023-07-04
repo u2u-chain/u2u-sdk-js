@@ -8,7 +8,7 @@ import {
 } from "../../src/index.js";
 import * as grpc from "@grpc/grpc-js";
 import * as loader from "@grpc/proto-loader";
-import { proto } from "@hashgraph/proto";
+import { proto } from "@u2u/proto";
 
 /**
  * @template {*} RequestType
@@ -18,7 +18,7 @@ import { proto } from "@hashgraph/proto";
 
 /**
  * @namespace com
- * @typedef {import("@hashgraph/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
+ * @typedef {import("@u2u/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
  */
 
 export const PRIVATE_KEY = PrivateKey.fromString(
@@ -145,9 +145,9 @@ export const INTERNAL = {
 
 /**
  * @namespace {proto}
- * @typedef {import("@hashgraph/proto").Response} proto.Response
- * @typedef {import("@hashgraph/proto").Query} proto.Query
- * @typedef {import("@hashgraph/proto").TransactionResponse} proto.TransactionResponse
+ * @typedef {import("@u2u/proto").Response} proto.Response
+ * @typedef {import("@u2u/proto").Query} proto.Query
+ * @typedef {import("@u2u/proto").TransactionResponse} proto.TransactionResponse
  */
 
 const fileId = FileId.fromString("0.0.141");

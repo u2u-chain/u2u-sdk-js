@@ -24,7 +24,7 @@ import ObjectMap from "../ObjectMap.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
+ * @typedef {import("@u2u/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
  */
 
 /**

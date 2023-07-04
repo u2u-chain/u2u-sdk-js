@@ -30,7 +30,7 @@ export default class NodeAccountIdSignatureMap extends ObjectMap {
     }
 
     /**
-     * @param {import("@hashgraph/proto").proto.ISignatureMap} sigMap
+     * @param {import("@u2u/proto").proto.ISignatureMap} sigMap
      * @returns {NodeAccountIdSignatureMap}
      */
     static _fromTransactionSigMap(sigMap) {

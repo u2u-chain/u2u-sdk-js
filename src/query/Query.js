@@ -23,7 +23,7 @@ import AccountId from "../account/AccountId.js";
 import U2U from "../U2U.js";
 import Executable, { ExecutionState } from "../Executable.js";
 import TransactionId from "../transaction/TransactionId.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import PrecheckStatusError from "../PrecheckStatusError.js";
 import MaxQueryPaymentExceeded from "../MaxQueryPaymentExceeded.js";
 import Long from "long";

@@ -23,7 +23,7 @@ import Cache from "./Cache.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITimestamp} HashgraphProto.proto.ITimestamp
+ * @typedef {import("@u2u/proto").proto.ITimestamp} HashgraphProto.proto.ITimestamp
  */
 
 const MAX_NS = Long.fromNumber(1000000000);

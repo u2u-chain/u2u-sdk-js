@@ -2,7 +2,7 @@ import { expect } from "chai";
 
 import * as hex from "../../src/encoding/hex.js";
 import * as rlp from "@ethersproject/rlp";
-import { proto } from "@hashgraph/proto";
+import { proto } from "@u2u/proto";
 import Mocker from "./Mocker.js";
 import { EthereumFlow, FileId } from "../../src/index.js";
 

@@ -22,8 +22,8 @@ import ContractId from "./ContractId.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IContractLoginfo} HashgraphProto.proto.IContractLoginfo
- * @typedef {import("@hashgraph/proto").proto.IContractID} HashgraphProto.proto.IContractID
+ * @typedef {import("@u2u/proto").proto.IContractLoginfo} HashgraphProto.proto.IContractLoginfo
+ * @typedef {import("@u2u/proto").proto.IContractID} HashgraphProto.proto.IContractID
  */
 
 /**

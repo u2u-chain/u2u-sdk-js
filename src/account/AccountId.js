@@ -20,7 +20,7 @@
 
 import Long from "long";
 import * as entity_id from "../EntityIdHelper.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import Key from "../Key.js";
 import PublicKey from "../PublicKey.js";
 import CACHE from "../Cache.js";

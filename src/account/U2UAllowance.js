@@ -23,9 +23,9 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IGrantedCryptoAllowance} HashgraphProto.proto.IGrantedCryptoAllowance
- * @typedef {import("@hashgraph/proto").proto.ICryptoAllowance} HashgraphProto.proto.ICryptoAllowance
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.IGrantedCryptoAllowance} HashgraphProto.proto.IGrantedCryptoAllowance
+ * @typedef {import("@u2u/proto").proto.ICryptoAllowance} HashgraphProto.proto.ICryptoAllowance
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
  */
 
 /**

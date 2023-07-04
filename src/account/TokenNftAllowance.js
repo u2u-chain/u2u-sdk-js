@@ -24,11 +24,11 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IGrantedNftAllowance} HashgraphProto.proto.IGrantedNftAllowance
- * @typedef {import("@hashgraph/proto").proto.INftRemoveAllowance} HashgraphProto.proto.INftRemoveAllowance
- * @typedef {import("@hashgraph/proto").proto.INftAllowance} HashgraphProto.proto.INftAllowance
- * @typedef {import("@hashgraph/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.IGrantedNftAllowance} HashgraphProto.proto.IGrantedNftAllowance
+ * @typedef {import("@u2u/proto").proto.INftRemoveAllowance} HashgraphProto.proto.INftRemoveAllowance
+ * @typedef {import("@u2u/proto").proto.INftAllowance} HashgraphProto.proto.INftAllowance
+ * @typedef {import("@u2u/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
  */
 
 /**

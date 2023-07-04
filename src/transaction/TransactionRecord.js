@@ -26,7 +26,7 @@ import Transfer from "../Transfer.js";
 import ContractFunctionResult from "../contract/ContractFunctionResult.js";
 import TokenTransferMap from "../account/TokenTransferMap.js";
 import TokenNftTransferMap from "../account/TokenNftTransferMap.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import ScheduleId from "../schedule/ScheduleId.js";
 import AssessedCustomFee from "../token/AssessedCustomFee.js";
 import TokenAssocation from "../token/TokenAssociation.js";

@@ -43,14 +43,14 @@ import Transaction, {
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
- * @typedef {import("@hashgraph/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
- * @typedef {import("@hashgraph/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionResponse} HashgraphProto.proto.ITransactionResponse
- * @typedef {import("@hashgraph/proto").proto.IScheduleSignTransactionBody} HashgraphProto.proto.IScheduleSignTransactionBody
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
- * @typedef {import("@hashgraph/proto").proto.ISignatureMap} HashgraphProto.proto.ISignatureMap
+ * @typedef {import("@u2u/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
+ * @typedef {import("@u2u/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
+ * @typedef {import("@u2u/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionResponse} HashgraphProto.proto.ITransactionResponse
+ * @typedef {import("@u2u/proto").proto.IScheduleSignTransactionBody} HashgraphProto.proto.IScheduleSignTransactionBody
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.ISignatureMap} HashgraphProto.proto.ISignatureMap
  */
 
 /**

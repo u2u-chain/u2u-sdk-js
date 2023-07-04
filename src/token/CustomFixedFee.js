@@ -26,8 +26,8 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ICustomFee} HashgraphProto.proto.ICustomFee
- * @typedef {import("@hashgraph/proto").proto.IFixedFee} HashgraphProto.proto.IFixedFee
+ * @typedef {import("@u2u/proto").proto.ICustomFee} HashgraphProto.proto.ICustomFee
+ * @typedef {import("@u2u/proto").proto.IFixedFee} HashgraphProto.proto.IFixedFee
  */
 
 export default class CustomFixedFee extends CustomFee {

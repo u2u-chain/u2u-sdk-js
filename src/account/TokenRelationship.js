@@ -23,10 +23,10 @@ import TokenId from "../token/TokenId.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITokenRelationship} HashgraphProto.proto.ITokenRelationship
- * @typedef {import("@hashgraph/proto").proto.TokenKycStatus} HashgraphProto.proto.TokenKycStatus
- * @typedef {import("@hashgraph/proto").proto.TokenFreezeStatus} HashgraphProto.proto.TokenFreezeStatus
- * @typedef {import("@hashgraph/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
+ * @typedef {import("@u2u/proto").proto.ITokenRelationship} HashgraphProto.proto.ITokenRelationship
+ * @typedef {import("@u2u/proto").proto.TokenKycStatus} HashgraphProto.proto.TokenKycStatus
+ * @typedef {import("@u2u/proto").proto.TokenFreezeStatus} HashgraphProto.proto.TokenFreezeStatus
+ * @typedef {import("@u2u/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
  */
 
 /**

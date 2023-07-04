@@ -24,15 +24,15 @@ import Transaction, {
 import { isNumber } from "./util.js";
 
 /**
- * @typedef {import("@hashgraph/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
- * @typedef {import("@hashgraph/proto").proto.Transaction} HashgraphProto.proto.Transaction
- * @typedef {import("@hashgraph/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
- * @typedef {import("@hashgraph/proto").proto.SignedTransaction} HashgraphProto.proto.SignedTransaction
- * @typedef {import("@hashgraph/proto").proto.IUtilPrngTransactionBody } HashgraphProto.proto.IUtilPrngTransactionBody
- * @typedef {import("@hashgraph/proto").proto.UtilPrngTransactionBody} HashgraphProto.proto.UtilPrngTransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionResponse} HashgraphProto.proto.TransactionResponse
- * @typedef {import("@hashgraph/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
+ * @typedef {import("@u2u/proto").proto.Transaction} HashgraphProto.proto.Transaction
+ * @typedef {import("@u2u/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
+ * @typedef {import("@u2u/proto").proto.SignedTransaction} HashgraphProto.proto.SignedTransaction
+ * @typedef {import("@u2u/proto").proto.IUtilPrngTransactionBody } HashgraphProto.proto.IUtilPrngTransactionBody
+ * @typedef {import("@u2u/proto").proto.UtilPrngTransactionBody} HashgraphProto.proto.UtilPrngTransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionResponse} HashgraphProto.proto.TransactionResponse
+ * @typedef {import("@u2u/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
  * @typedef {import("./account/AccountId.js").default} AccountId
  * @typedef {import("./transaction/TransactionId.js").default} TransactionId
  */

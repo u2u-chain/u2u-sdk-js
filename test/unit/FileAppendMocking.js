@@ -5,7 +5,7 @@ import Mocker, {
     TRANSACTION_RECEIPT_FAILED_RESPONSE,
 } from "./Mocker.js";
 import { bigContents } from "../integration/contents.js";
-import { proto } from "@hashgraph/proto";
+import { proto } from "@u2u/proto";
 
 describe("FileAppendMocking", function () {
     it("works", async function () {

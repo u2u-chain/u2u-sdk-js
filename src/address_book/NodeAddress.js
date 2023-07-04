@@ -24,7 +24,7 @@ import * as utf8 from "../encoding/utf8.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.INodeAddress} HashgraphProto.proto.INodeAddress
+ * @typedef {import("@u2u/proto").proto.INodeAddress} HashgraphProto.proto.INodeAddress
  */
 
 /**

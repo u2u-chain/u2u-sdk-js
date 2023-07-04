@@ -20,7 +20,7 @@
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.TokenSupplyType} HashgraphProto.proto.TokenSupplyType
+ * @typedef {import("@u2u/proto").proto.TokenSupplyType} HashgraphProto.proto.TokenSupplyType
  */
 
 export default class TokenSupplyType {

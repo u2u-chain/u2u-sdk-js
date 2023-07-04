@@ -23,12 +23,12 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITimestamp} HashgraphProto.proto.ITimestamp
+ * @typedef {import("@u2u/proto").proto.ITimestamp} HashgraphProto.proto.ITimestamp
  */
 
 /**
  * @namespace com
- * @typedef {import("@hashgraph/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
+ * @typedef {import("@u2u/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
  */
 
 export default class TopicMessageChunk {

@@ -25,7 +25,7 @@ import Timestamp from "../Timestamp.js";
 import Duration from "../Duration.js";
 import U2U from "../U2U.js";
 import Long from "long";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import TokenRelationshipMap from "../account/TokenRelationshipMap.js";
 import Key from "../Key.js";
 import LedgerId from "../LedgerId.js";

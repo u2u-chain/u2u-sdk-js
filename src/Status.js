@@ -20,7 +20,7 @@
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ResponseCodeEnum} HashgraphProto.proto.ResponseCodeEnum
+ * @typedef {import("@u2u/proto").proto.ResponseCodeEnum} HashgraphProto.proto.ResponseCodeEnum
  */
 
 export default class Status {

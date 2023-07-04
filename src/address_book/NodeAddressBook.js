@@ -19,7 +19,7 @@
  */
 
 import NodeAddress from "./NodeAddress.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 /**
  * @typedef {import("./NodeAddress.js").NodeAddressJson} NodeAddressJson

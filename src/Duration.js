@@ -22,7 +22,7 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IDuration} HashgraphProto.proto.IDuration
+ * @typedef {import("@u2u/proto").proto.IDuration} HashgraphProto.proto.IDuration
  */
 
 /**

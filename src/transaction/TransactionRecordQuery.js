@@ -27,7 +27,7 @@ import PrecheckStatusError from "../PrecheckStatusError.js";
 import ReceiptStatusError from "../ReceiptStatusError.js";
 import RecordStatusError from "../RecordStatusError.js";
 import { ExecutionState } from "../Executable.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 const { proto } = HashgraphProto;
 

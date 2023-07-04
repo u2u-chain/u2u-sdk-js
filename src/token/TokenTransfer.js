@@ -24,10 +24,10 @@ import TokenId from "./TokenId.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITokenTransferList} HashgraphProto.proto.ITokenTransferList
- * @typedef {import("@hashgraph/proto").proto.IAccountAmount} HashgraphProto.proto.IAccountAmount
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
- * @typedef {import("@hashgraph/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
+ * @typedef {import("@u2u/proto").proto.ITokenTransferList} HashgraphProto.proto.ITokenTransferList
+ * @typedef {import("@u2u/proto").proto.IAccountAmount} HashgraphProto.proto.IAccountAmount
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
  */
 
 /**

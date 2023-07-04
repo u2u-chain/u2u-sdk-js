@@ -35,8 +35,8 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IContractFunctionResult} HashgraphProto.proto.IContractFunctionResult
- * @typedef {import("@hashgraph/proto").proto.IContractID} HashgraphProto.proto.IContractID
+ * @typedef {import("@u2u/proto").proto.IContractFunctionResult} HashgraphProto.proto.IContractFunctionResult
+ * @typedef {import("@u2u/proto").proto.IContractID} HashgraphProto.proto.IContractID
  */
 
 /**

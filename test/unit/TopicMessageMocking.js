@@ -6,7 +6,7 @@ import { TopicMessageQuery } from "../../src/index.js";
 
 /**
  * @namespace com
- * @typedef {import("@hashgraph/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
+ * @typedef {import("@u2u/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
  */
 
 /** @type {com.hedera.mirror.api.proto.IConsensusTopicResponse} */

@@ -24,7 +24,7 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IAssessedCustomFee} HashgraphProto.proto.IAssessedCustomFee
+ * @typedef {import("@u2u/proto").proto.IAssessedCustomFee} HashgraphProto.proto.IAssessedCustomFee
  */
 
 export default class AssessedCustomFee {

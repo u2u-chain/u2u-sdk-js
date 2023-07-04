@@ -21,7 +21,7 @@
 import AccountId from "./account/AccountId.js";
 import U2U from "./U2U.js";
 import Timestamp from "./Timestamp.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 /**
  * @typedef {import("long").Long} Long

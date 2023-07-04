@@ -20,7 +20,7 @@
 
 import NodeAddressBook from "./NodeAddressBook.js";
 import * as hex from "../encoding/hex.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 export const PREVIEWNET_ADDRESS_BOOK = NodeAddressBook._fromProtobuf(
     HashgraphProto.proto.NodeAddressBook.decode(

@@ -20,7 +20,7 @@
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.SubType} HashgraphProto.proto.SubType
+ * @typedef {import("@u2u/proto").proto.SubType} HashgraphProto.proto.SubType
  */
 
 export default class FeeDataType {

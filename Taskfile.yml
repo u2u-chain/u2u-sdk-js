@@ -55,9 +55,9 @@ tasks:
         cmds:
             - task: "install:deps"
             - task: "proto:build"
-            - ./node_modules/.bin/yalc add @hashgraph/proto > /dev/null
+            - ./node_modules/.bin/yalc add @u2u/proto > /dev/null
         status:
-            - ./check_yalc_dep.sh @hashgraph/proto
+            - ./check_yalc_dep.sh @u2u/proto
 
     "build:proto":
         cmds:
@@ -168,9 +168,9 @@ tasks:
         deps:
             - "proto:update"
         cmds:
-            - ./node_modules/.bin/yalc add @hashgraph/proto
+            - ./node_modules/.bin/yalc add @u2u/proto
             # Remove proto so on `task build` we fix the link
-            - rm -rf ./node_modules/@hashgraph/proto
+            - rm -rf ./node_modules/@u2u/proto
 
     "update:addressbooks":
         cmds:

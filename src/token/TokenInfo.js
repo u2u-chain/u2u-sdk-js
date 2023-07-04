@@ -23,7 +23,7 @@ import AccountId from "../account/AccountId.js";
 import Duration from "../Duration.js";
 import Timestamp from "../Timestamp.js";
 import Long from "long";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import TokenType from "./TokenType.js";
 import TokenSupplyType from "./TokenSupplyType.js";
 import CustomFixedFee from "./CustomFixedFee.js";

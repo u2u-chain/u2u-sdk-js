@@ -26,16 +26,16 @@ import LedgerId from "../LedgerId.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.TokenFreezeStatus} HashgraphProto.proto.TokenFreezeStatus
- * @typedef {import("@hashgraph/proto").proto.TokenKycStatus} HashgraphProto.proto.TokenKycStatus
- * @typedef {import("@hashgraph/proto").proto.TokenPauseStatus} HashgraphProto.proto.TokenPauseStatus
- * @typedef {import("@hashgraph/proto").proto.ITokenNftInfo} HashgraphProto.proto.ITokenNftInfo
- * @typedef {import("@hashgraph/proto").proto.INftID} HashgraphProto.proto.INftID
- * @typedef {import("@hashgraph/proto").proto.ITimestamp} HashgraphProto.proto.ITimestamp
- * @typedef {import("@hashgraph/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
- * @typedef {import("@hashgraph/proto").proto.IKey} HashgraphProto.proto.IKey
- * @typedef {import("@hashgraph/proto").proto.IDuration} HashgraphProto.proto.IDuration
+ * @typedef {import("@u2u/proto").proto.TokenFreezeStatus} HashgraphProto.proto.TokenFreezeStatus
+ * @typedef {import("@u2u/proto").proto.TokenKycStatus} HashgraphProto.proto.TokenKycStatus
+ * @typedef {import("@u2u/proto").proto.TokenPauseStatus} HashgraphProto.proto.TokenPauseStatus
+ * @typedef {import("@u2u/proto").proto.ITokenNftInfo} HashgraphProto.proto.ITokenNftInfo
+ * @typedef {import("@u2u/proto").proto.INftID} HashgraphProto.proto.INftID
+ * @typedef {import("@u2u/proto").proto.ITimestamp} HashgraphProto.proto.ITimestamp
+ * @typedef {import("@u2u/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.IKey} HashgraphProto.proto.IKey
+ * @typedef {import("@u2u/proto").proto.IDuration} HashgraphProto.proto.IDuration
  */
 
 export default class TokenNftInfo {

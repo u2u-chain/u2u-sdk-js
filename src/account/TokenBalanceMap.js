@@ -23,8 +23,8 @@ import ObjectMap from "../ObjectMap.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITokenBalance} HashgraphProto.proto.ITokenBalance
- * @typedef {import("@hashgraph/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
+ * @typedef {import("@u2u/proto").proto.ITokenBalance} HashgraphProto.proto.ITokenBalance
+ * @typedef {import("@u2u/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
  */
 
 /**

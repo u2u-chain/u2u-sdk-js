@@ -66,7 +66,7 @@ export default class ExchangeRate {
 
     /**
      * @internal
-     * @param {import("@hashgraph/proto").proto.IExchangeRate} rate
+     * @param {import("@u2u/proto").proto.IExchangeRate} rate
      * @returns {ExchangeRate}
      */
     static _fromProtobuf(rate) {
@@ -87,7 +87,7 @@ export default class ExchangeRate {
 
     /**
      * @internal
-     * @returns {import("@hashgraph/proto").proto.IExchangeRate}
+     * @returns {import("@u2u/proto").proto.IExchangeRate}
      */
     _toProtobuf() {
         // TODO: convert hbar equiv

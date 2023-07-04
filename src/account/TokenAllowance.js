@@ -24,10 +24,10 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IGrantedTokenAllowance} HashgraphProto.proto.IGrantedTokenAllowance
- * @typedef {import("@hashgraph/proto").proto.ITokenAllowance} HashgraphProto.proto.ITokenAllowance
- * @typedef {import("@hashgraph/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.IGrantedTokenAllowance} HashgraphProto.proto.IGrantedTokenAllowance
+ * @typedef {import("@u2u/proto").proto.ITokenAllowance} HashgraphProto.proto.ITokenAllowance
+ * @typedef {import("@u2u/proto").proto.ITokenID} HashgraphProto.proto.ITokenID
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
  */
 
 /**

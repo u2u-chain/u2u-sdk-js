@@ -18,7 +18,7 @@
  * ‍
  */
 
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import * as utf8 from "../encoding/utf8.js";
 
 const { proto } = HashgraphProto;

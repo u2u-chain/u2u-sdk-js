@@ -30,13 +30,13 @@ import * as util from "../util.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IConsensusSubmitMessageTransactionBody} HashgraphProto.proto.IConsensusSubmitMessageTransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
- * @typedef {import("@hashgraph/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
- * @typedef {import("@hashgraph/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionResponse} HashgraphProto.proto.ITransactionResponse
- * @typedef {import("@hashgraph/proto").proto.IConsensusMessageChunkInfo} HashgraphProto.proto.IConsensusMessageChunkInfo
+ * @typedef {import("@u2u/proto").proto.IConsensusSubmitMessageTransactionBody} HashgraphProto.proto.IConsensusSubmitMessageTransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
+ * @typedef {import("@u2u/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
+ * @typedef {import("@u2u/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionResponse} HashgraphProto.proto.ITransactionResponse
+ * @typedef {import("@u2u/proto").proto.IConsensusMessageChunkInfo} HashgraphProto.proto.IConsensusMessageChunkInfo
  */
 
 /**

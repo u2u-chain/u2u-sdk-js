@@ -18,7 +18,7 @@
  * ‍
  */
 
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import ContractId from "./ContractId.js";
 import StorageChange from "./StorageChange.js";
 

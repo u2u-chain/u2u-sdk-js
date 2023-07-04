@@ -23,8 +23,8 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IProxyStaker} HashgraphProto.proto.IProxyStaker
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.IProxyStaker} HashgraphProto.proto.IProxyStaker
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
  */
 
 /**

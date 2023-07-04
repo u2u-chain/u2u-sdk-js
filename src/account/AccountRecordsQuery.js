@@ -24,13 +24,13 @@ import TransactionRecord from "../transaction/TransactionRecord.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IQuery} HashgraphProto.proto.IQuery
- * @typedef {import("@hashgraph/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
- * @typedef {import("@hashgraph/proto").proto.IResponse} HashgraphProto.proto.IResponse
- * @typedef {import("@hashgraph/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
- * @typedef {import("@hashgraph/proto").proto.ICryptoGetAccountRecordsQuery} HashgraphProto.proto.ICryptoGetAccountRecordsQuery
- * @typedef {import("@hashgraph/proto").proto.ICryptoGetAccountRecordsResponse} HashgraphProto.proto.ICryptoGetAccountRecordsResponse
- * @typedef {import("@hashgraph/proto").proto.ITransactionRecord} HashgraphProto.proto.ITransactionRecord
+ * @typedef {import("@u2u/proto").proto.IQuery} HashgraphProto.proto.IQuery
+ * @typedef {import("@u2u/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
+ * @typedef {import("@u2u/proto").proto.IResponse} HashgraphProto.proto.IResponse
+ * @typedef {import("@u2u/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
+ * @typedef {import("@u2u/proto").proto.ICryptoGetAccountRecordsQuery} HashgraphProto.proto.ICryptoGetAccountRecordsQuery
+ * @typedef {import("@u2u/proto").proto.ICryptoGetAccountRecordsResponse} HashgraphProto.proto.ICryptoGetAccountRecordsResponse
+ * @typedef {import("@u2u/proto").proto.ITransactionRecord} HashgraphProto.proto.ITransactionRecord
  */
 
 /**

@@ -18,7 +18,7 @@
  * ‍
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import U2U from "../U2U.js";
 import AccountId from "./AccountId.js";
 import Transaction, {

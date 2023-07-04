@@ -26,13 +26,13 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IQuery} HashgraphProto.proto.IQuery
- * @typedef {import("@hashgraph/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
- * @typedef {import("@hashgraph/proto").proto.IResponse} HashgraphProto.proto.IResponse
- * @typedef {import("@hashgraph/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
- * @typedef {import("@hashgraph/proto").proto.IContractGetInfoQuery} HashgraphProto.proto.IContractGetInfoQuery
- * @typedef {import("@hashgraph/proto").proto.IContractGetInfoResponse} HashgraphProto.proto.IContractGetInfoResponse
- * @typedef {import("@hashgraph/proto").proto.ContractGetInfoResponse.IContractInfo} HashgraphProto.proto.ContractGetInfoResponse.IContractInfo
+ * @typedef {import("@u2u/proto").proto.IQuery} HashgraphProto.proto.IQuery
+ * @typedef {import("@u2u/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
+ * @typedef {import("@u2u/proto").proto.IResponse} HashgraphProto.proto.IResponse
+ * @typedef {import("@u2u/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
+ * @typedef {import("@u2u/proto").proto.IContractGetInfoQuery} HashgraphProto.proto.IContractGetInfoQuery
+ * @typedef {import("@u2u/proto").proto.IContractGetInfoResponse} HashgraphProto.proto.IContractGetInfoResponse
+ * @typedef {import("@u2u/proto").proto.ContractGetInfoResponse.IContractInfo} HashgraphProto.proto.ContractGetInfoResponse.IContractInfo
  */
 
 /**

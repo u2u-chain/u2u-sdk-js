@@ -27,7 +27,7 @@ import ScheduleId from "../schedule/ScheduleId.js";
 import ExchangeRate from "../ExchangeRate.js";
 import Status from "../Status.js";
 import Long from "long";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import TransactionId from "../transaction/TransactionId.js";
 
 /**

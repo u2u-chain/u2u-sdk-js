@@ -34,10 +34,10 @@
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IKey} HashgraphProto.proto.IKey
- * @typedef {import("@hashgraph/proto").proto.IKeyList} HashgraphProto.proto.IKeyList
- * @typedef {import("@hashgraph/proto").proto.IThresholdKey} HashgraphProto.proto.IThresholdKey
- * @typedef {import("@hashgraph/proto").proto.IContractID} HashgraphProto.proto.IContractID
+ * @typedef {import("@u2u/proto").proto.IKey} HashgraphProto.proto.IKey
+ * @typedef {import("@u2u/proto").proto.IKeyList} HashgraphProto.proto.IKeyList
+ * @typedef {import("@u2u/proto").proto.IThresholdKey} HashgraphProto.proto.IThresholdKey
+ * @typedef {import("@u2u/proto").proto.IContractID} HashgraphProto.proto.IContractID
  */
 
 /**

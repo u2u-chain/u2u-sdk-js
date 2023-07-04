@@ -26,13 +26,13 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IQuery} HashgraphProto.proto.IQuery
- * @typedef {import("@hashgraph/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
- * @typedef {import("@hashgraph/proto").proto.IResponse} HashgraphProto.proto.IResponse
- * @typedef {import("@hashgraph/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
- * @typedef {import("@hashgraph/proto").proto.IFileGetInfoQuery} HashgraphProto.proto.IFileGetInfoQuery
- * @typedef {import("@hashgraph/proto").proto.IFileGetInfoResponse} HashgraphProto.proto.IFileGetInfoResponse
- * @typedef {import("@hashgraph/proto").proto.FileGetInfoResponse.IFileInfo} HashgraphProto.proto.IFileInfo
+ * @typedef {import("@u2u/proto").proto.IQuery} HashgraphProto.proto.IQuery
+ * @typedef {import("@u2u/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
+ * @typedef {import("@u2u/proto").proto.IResponse} HashgraphProto.proto.IResponse
+ * @typedef {import("@u2u/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
+ * @typedef {import("@u2u/proto").proto.IFileGetInfoQuery} HashgraphProto.proto.IFileGetInfoQuery
+ * @typedef {import("@u2u/proto").proto.IFileGetInfoResponse} HashgraphProto.proto.IFileGetInfoResponse
+ * @typedef {import("@u2u/proto").proto.FileGetInfoResponse.IFileInfo} HashgraphProto.proto.IFileInfo
  */
 
 /**

@@ -24,7 +24,7 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ITokenAssociation} HashgraphProto.proto.ITokenAssociation
+ * @typedef {import("@u2u/proto").proto.ITokenAssociation} HashgraphProto.proto.ITokenAssociation
  */
 
 export default class TokenAssociation {

@@ -29,17 +29,17 @@ import Long from "long";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IQuery} HashgraphProto.proto.IQuery
- * @typedef {import("@hashgraph/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
- * @typedef {import("@hashgraph/proto").proto.IResponse} HashgraphProto.proto.IResponse
- * @typedef {import("@hashgraph/proto").proto.ITokenNftInfo} HashgraphProto.proto.ITokenNftInfo
- * @typedef {import("@hashgraph/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
- * @typedef {import("@hashgraph/proto").proto.ITokenGetNftInfoQuery} HashgraphProto.proto.ITokenGetNftInfoQuery
- * @typedef {import("@hashgraph/proto").proto.ITokenGetNftInfosQuery} HashgraphProto.proto.ITokenGetNftInfosQuery
- * @typedef {import("@hashgraph/proto").proto.ITokenGetAccountNftInfosQuery} HashgraphProto.proto.ITokenGetAccountNftInfosQuery
- * @typedef {import("@hashgraph/proto").proto.ITokenGetNftInfoResponse} HashgraphProto.proto.ITokenGetNftInfoResponse
- * @typedef {import("@hashgraph/proto").proto.ITokenGetNftInfosResponse} HashgraphProto.proto.ITokenGetNftInfosResponse
- * @typedef {import("@hashgraph/proto").proto.ITokenGetAccountNftInfosResponse} HashgraphProto.proto.ITokenGetAccountNftInfosResponse
+ * @typedef {import("@u2u/proto").proto.IQuery} HashgraphProto.proto.IQuery
+ * @typedef {import("@u2u/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
+ * @typedef {import("@u2u/proto").proto.IResponse} HashgraphProto.proto.IResponse
+ * @typedef {import("@u2u/proto").proto.ITokenNftInfo} HashgraphProto.proto.ITokenNftInfo
+ * @typedef {import("@u2u/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
+ * @typedef {import("@u2u/proto").proto.ITokenGetNftInfoQuery} HashgraphProto.proto.ITokenGetNftInfoQuery
+ * @typedef {import("@u2u/proto").proto.ITokenGetNftInfosQuery} HashgraphProto.proto.ITokenGetNftInfosQuery
+ * @typedef {import("@u2u/proto").proto.ITokenGetAccountNftInfosQuery} HashgraphProto.proto.ITokenGetAccountNftInfosQuery
+ * @typedef {import("@u2u/proto").proto.ITokenGetNftInfoResponse} HashgraphProto.proto.ITokenGetNftInfoResponse
+ * @typedef {import("@u2u/proto").proto.ITokenGetNftInfosResponse} HashgraphProto.proto.ITokenGetNftInfosResponse
+ * @typedef {import("@u2u/proto").proto.ITokenGetAccountNftInfosResponse} HashgraphProto.proto.ITokenGetAccountNftInfosResponse
  */
 
 /**

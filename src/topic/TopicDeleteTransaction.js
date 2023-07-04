@@ -25,12 +25,12 @@ import TopicId from "./TopicId.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IConsensusDeleteTopicTransactionBody} HashgraphProto.proto.IConsensusDeleteTopicTransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
- * @typedef {import("@hashgraph/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
- * @typedef {import("@hashgraph/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
- * @typedef {import("@hashgraph/proto").proto.ITransactionResponse} HashgraphProto.proto.ITransactionResponse
+ * @typedef {import("@u2u/proto").proto.IConsensusDeleteTopicTransactionBody} HashgraphProto.proto.IConsensusDeleteTopicTransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransaction} HashgraphProto.proto.ITransaction
+ * @typedef {import("@u2u/proto").proto.ISignedTransaction} HashgraphProto.proto.ISignedTransaction
+ * @typedef {import("@u2u/proto").proto.TransactionBody} HashgraphProto.proto.TransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionBody} HashgraphProto.proto.ITransactionBody
+ * @typedef {import("@u2u/proto").proto.ITransactionResponse} HashgraphProto.proto.ITransactionResponse
  */
 
 /**

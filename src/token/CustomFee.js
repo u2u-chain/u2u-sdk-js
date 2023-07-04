@@ -22,7 +22,7 @@ import AccountId from "../account/AccountId.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.ICustomFee} HashgraphProto.proto.ICustomFee
+ * @typedef {import("@u2u/proto").proto.ICustomFee} HashgraphProto.proto.ICustomFee
  */
 
 export default class CustomFee {

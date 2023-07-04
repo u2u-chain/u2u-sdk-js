@@ -24,9 +24,9 @@ import KeyList from "../KeyList.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
- * @typedef {import("@hashgraph/proto").proto.ILiveHash} HashgraphProto.proto.ILiveHash
- * @typedef {import("@hashgraph/proto").proto.IDuration} HashgraphProto.proto.IDuration
+ * @typedef {import("@u2u/proto").proto.IAccountID} HashgraphProto.proto.IAccountID
+ * @typedef {import("@u2u/proto").proto.ILiveHash} HashgraphProto.proto.ILiveHash
+ * @typedef {import("@u2u/proto").proto.IDuration} HashgraphProto.proto.IDuration
  */
 
 /**

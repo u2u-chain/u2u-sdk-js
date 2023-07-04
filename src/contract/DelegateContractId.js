@@ -24,8 +24,8 @@ import * as hex from "../encoding/hex.js";
 
 /**
  * @namespace {proto}
- * @typedef {import("@hashgraph/proto").proto.IContractID} HashgraphProto.proto.IContractID
- * @typedef {import("@hashgraph/proto").proto.IKey} HashgraphProto.proto.IKey
+ * @typedef {import("@u2u/proto").proto.IContractID} HashgraphProto.proto.IContractID
+ * @typedef {import("@u2u/proto").proto.IKey} HashgraphProto.proto.IKey
  */
 
 /**

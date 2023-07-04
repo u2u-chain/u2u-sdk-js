@@ -18,7 +18,7 @@
  * ‍
  */
 
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import FeeComponents from "./FeeComponents.js";
 import FeeDataType from "./FeeDataType.js";
 

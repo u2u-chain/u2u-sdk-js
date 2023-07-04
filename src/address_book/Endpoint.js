@@ -22,7 +22,7 @@ import IPv4Address from "./IPv4Address.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IServiceEndpoint} HashgraphProto.proto.IServiceEndpoint
+ * @typedef {import("@u2u/proto").proto.IServiceEndpoint} HashgraphProto.proto.IServiceEndpoint
  */
 
 /**

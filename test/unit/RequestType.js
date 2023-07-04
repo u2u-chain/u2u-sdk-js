@@ -1,4 +1,4 @@
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import { RequestType } from "../../src/exports.js";
 
 describe("RequestType", function () {

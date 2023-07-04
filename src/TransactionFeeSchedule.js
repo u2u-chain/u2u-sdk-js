@@ -18,7 +18,7 @@
  * ‍
  */
 
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import RequestType from "./RequestType.js";
 import FeeData from "./FeeData.js";
 

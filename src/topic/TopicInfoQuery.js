@@ -26,17 +26,17 @@ import U2U from "../U2U.js";
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.IQuery} HashgraphProto.proto.IQuery
- * @typedef {import("@hashgraph/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
- * @typedef {import("@hashgraph/proto").proto.IResponse} HashgraphProto.proto.IResponse
- * @typedef {import("@hashgraph/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
- * @typedef {import("@hashgraph/proto").proto.IConsensusGetTopicInfoResponse} HashgraphProto.proto.IConsensusGetTopicInfoResponse
- * @typedef {import("@hashgraph/proto").proto.IConsensusGetTopicInfoQuery} HashgraphProto.proto.IConsensusGetTopicInfoQuery
+ * @typedef {import("@u2u/proto").proto.IQuery} HashgraphProto.proto.IQuery
+ * @typedef {import("@u2u/proto").proto.IQueryHeader} HashgraphProto.proto.IQueryHeader
+ * @typedef {import("@u2u/proto").proto.IResponse} HashgraphProto.proto.IResponse
+ * @typedef {import("@u2u/proto").proto.IResponseHeader} HashgraphProto.proto.IResponseHeader
+ * @typedef {import("@u2u/proto").proto.IConsensusGetTopicInfoResponse} HashgraphProto.proto.IConsensusGetTopicInfoResponse
+ * @typedef {import("@u2u/proto").proto.IConsensusGetTopicInfoQuery} HashgraphProto.proto.IConsensusGetTopicInfoQuery
  */
 
 /**
  * @namespace com
- * @typedef {import("@hashgraph/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
+ * @typedef {import("@u2u/proto").com.hedera.mirror.api.proto.IConsensusTopicResponse} com.hedera.mirror.api.proto.IConsensusTopicResponse
  */
 
 /**

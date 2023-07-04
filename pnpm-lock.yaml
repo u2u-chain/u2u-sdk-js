@@ -23,7 +23,7 @@ dependencies:
   '@hashgraph/cryptography':
     specifier: 1.4.6
     version: 1.4.6(expo@47.0.14)
-  '@hashgraph/proto':
+  '@u2u/proto':
     specifier: 2.12.0
     version: 2.12.0
   axios:
@@ -2535,7 +2535,7 @@ packages:
       utf8: 3.0.0
     dev: false
 
-  /@hashgraph/proto@2.12.0:
+  /@u2u/proto@2.12.0:
     resolution: {integrity: sha512-IIN6K3b2X8ih7V14IDH8rsVJ1DE9ud25FfKUpr+lDNnQdBfdZdG2AGlHRhc9iDAz4vCHoHc6F3Ao6yYKMceeTg==}
     engines: {node: '>=10.0.0'}
     dependencies:

@@ -494,7 +494,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
--   Bumped `@hashgraph/proto` version to correctly support account allowances
+-   Bumped `@u2u/proto` version to correctly support account allowances
 -   `TransactionId.transactionId` accessor should not error if there is no transaction ID set and
     instead should return a nullable `TransactionId`
 -   `ContractFunctionParameters.addBytes()` where the byte length is a factor of 32 and greater than 32
@@ -520,7 +520,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
--   Bumped `@hashgraph/proto` version to correctly support account allowances
+-   Bumped `@u2u/proto` version to correctly support account allowances
 -   `TransactionId.transactionId` accessor should not error if there is no transaction ID set and
     instead should return a nullable `TransactionId`
 -   `ContractFunctionParameters.addBytes()` where the byte length is a factor of 32 and greater than 32
@@ -1239,8 +1239,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   `Mnemonic.toLegacyPrivateKey()` no longer automaticaly derives `PrivateKey`, instead produces root `PrivateKey`
     Use `PrivateKey.legacyDerive()` to derive the proper `PrivateKey` manually
--   Removed the use of `@hashgraph/protobufjs` in favor of `protobufjs`
-    The reason `@hashgraph/protobufjs` even exists is because `protobufjs` contains `eval`
+-   Removed the use of `@u2u/protobufjs` in favor of `protobufjs`
+    The reason `@u2u/protobufjs` even exists is because `protobufjs` contains `eval`
     which fails CSP in browser. However, while running integration tests through `vite` and
     `mocha` it seems the `eval` was never hit.
 -   Moved from `yarn` to `pnpm` because of performance issues with `yarn`

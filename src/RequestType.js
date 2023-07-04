@@ -20,7 +20,7 @@
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.HederaFunctionality} HashgraphProto.proto.HederaFunctionality
+ * @typedef {import("@u2u/proto").proto.HederaFunctionality} HashgraphProto.proto.HederaFunctionality
  */
 
 export default class RequestType {

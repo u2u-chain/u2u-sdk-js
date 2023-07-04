@@ -19,7 +19,7 @@
  */
 
 import ExchangeRate from "./ExchangeRate.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 
 const { proto } = HashgraphProto;
 

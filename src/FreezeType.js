@@ -20,7 +20,7 @@
 
 /**
  * @namespace proto
- * @typedef {import("@hashgraph/proto").proto.FreezeType} HashgraphProto.proto.FreezeType
+ * @typedef {import("@u2u/proto").proto.FreezeType} HashgraphProto.proto.FreezeType
  */
 
 export default class FreezeType {

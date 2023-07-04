@@ -21,7 +21,7 @@
 import Query from "../query/Query.js";
 import NodeAddress from "../address_book/NodeAddress.js";
 import NodeAddressBook from "../address_book/NodeAddressBook.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import FileId from "../file/FileId.js";
 import { RST_STREAM } from "../Executable.js";
 import CACHE from "../Cache.js";

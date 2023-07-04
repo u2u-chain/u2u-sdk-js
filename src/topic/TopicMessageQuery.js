@@ -22,7 +22,7 @@ import Query from "../query/Query.js";
 import TransactionId from "../transaction/TransactionId.js";
 import SubscriptionHandle from "./SubscriptionHandle.js";
 import TopicMessage from "./TopicMessage.js";
-import * as HashgraphProto from "@hashgraph/proto";
+import * as HashgraphProto from "@u2u/proto";
 import TopicId from "./TopicId.js";
 import Long from "long";
 import Timestamp from "../Timestamp.js";
