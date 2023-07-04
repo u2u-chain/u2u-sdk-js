@@ -3,17 +3,9 @@ version: "3"
 silent: true
 
 includes:
-    examples:
-        taskfile: ./examples/Taskfile.yml
-        dir: ./examples
-
     common_js_test:
         taskfile: ./common_js_test/Taskfile.yml
         dir: ./common_js_test
-
-    simple_rest_signature_provider:
-        taskfile: ./examples/simple_rest_signature_provider/Taskfile.yml
-        dir: ./examples/simple_rest_signature_provider
 
     proto:
         taskfile: ./packages/proto/Taskfile.yml
