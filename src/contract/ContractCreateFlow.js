@@ -31,7 +31,7 @@ import PublicKey from "../PublicKey.js";
  * @typedef {import("../file/FileId.js").default} FileId
  * @typedef {import("../Key.js").default} Key
  * @typedef {import("./ContractFunctionParameters.js").default} ContractFunctionParameters
- * @typedef {import("../Hbar.js").default} Hbar
+ * @typedef {import("../U2U.js").default} U2U
  * @typedef {import("../Duration.js").default} Duration
  * @typedef {import("../channel/Channel.js").default} Channel
  * @typedef {import("../channel/MirrorChannel.js").default} MirrorChannel
@@ -149,7 +149,7 @@ export default class ContractCreateFlow {
     }
 
     /**
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get initialBalance() {
         return this._contractCreate.initialBalance;
@@ -158,7 +158,7 @@ export default class ContractCreateFlow {
     /**
      * Set the initial amount to transfer into this contract.
      *
-     * @param {number | string | Long | BigNumber | Hbar} initialBalance
+     * @param {number | string | Long | BigNumber | U2U} initialBalance
      * @returns {this}
      */
     setInitialBalance(initialBalance) {

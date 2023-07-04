@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import TokenId from "../token/TokenId.js";
 import AccountId from "./AccountId.js";
 import Transaction, {
@@ -29,7 +29,7 @@ import NullableTokenDecimalMap from "./NullableTokenDecimalMap.js";
 import Transfer from "../Transfer.js";
 import TokenTransfer from "../token/TokenTransfer.js";
 import TokenTransferMap from "./TokenTransferMap.js";
-import HbarTransferMap from "./HbarTransferMap.js";
+import U2UTransferMap from "./U2UTransferMap.js";
 import TokenNftTransferMap from "./TokenNftTransferMap.js";
 import TokenTransferAccountMap from "./TokenTransferAccountMap.js";
 import TokenNftTransfer from "../token/TokenNftTransfer.js";
@@ -77,7 +77,7 @@ import NftId from "../token/NftId.js";
 /**
  * @typedef {object} TransferHbarInput
  * @property {AccountId | string} accountId
- * @property {number | string | Long | BigNumber | Hbar} amount
+ * @property {number | string | Long | BigNumber | U2U} amount
  */
 
 /**
@@ -95,7 +95,7 @@ export default class TransferTransaction extends Transaction {
     /**
      * @param {object} [props]
      * @param {(TransferTokensInput)[]} [props.tokenTransfers]
-     * @param {(TransferHbarInput)[]} [props.hbarTransfers]
+     * @param {(TransferHbarInput)[]} [props.U2UTransfers]
      * @param {(TransferNftInput)[]} [props.nftTransfers]
      */
     constructor(props = {}) {
@@ -111,7 +111,7 @@ export default class TransferTransaction extends Transaction {
          * @private
          * @type {Transfer[]}
          */
-        this._hbarTransfers = [];
+        this._U2UTransfers = [];
 
         /**
          * @private
@@ -119,7 +119,7 @@ export default class TransferTransaction extends Transaction {
          */
         this._nftTransfers = [];
 
-        this._defaultMaxTransactionFee = new Hbar(1);
+        this._defaultMaxTransactionFee = new U2U(1);
 
         for (const transfer of props.tokenTransfers != null
             ? props.tokenTransfers
@@ -131,10 +131,10 @@ export default class TransferTransaction extends Transaction {
             );
         }
 
-        for (const transfer of props.hbarTransfers != null
-            ? props.hbarTransfers
+        for (const transfer of props.U2UTransfers != null
+            ? props.U2UTransfers
             : []) {
-            this.addHbarTransfer(transfer.accountId, transfer.amount);
+            this.addU2UTransfer(transfer.accountId, transfer.amount);
         }
 
         for (const transfer of props.nftTransfers != null
@@ -179,7 +179,7 @@ export default class TransferTransaction extends Transaction {
                 : []
         );
 
-        transfers._hbarTransfers = Transfer._fromProtobuf(
+        transfers._U2UTransfers = Transfer._fromProtobuf(
             cryptoTransfer.transfers != null
                 ? cryptoTransfer.transfers.accountAmounts != null
                     ? cryptoTransfer.transfers.accountAmounts
@@ -356,12 +356,12 @@ export default class TransferTransaction extends Transaction {
     }
 
     /**
-     * @returns {HbarTransferMap}
+     * @returns {U2UTransferMap}
      */
-    get hbarTransfers() {
-        const map = new HbarTransferMap();
+    get U2UTransfers() {
+        const map = new U2UTransferMap();
 
-        for (const transfer of this._hbarTransfers) {
+        for (const transfer of this._U2UTransfers) {
             map._set(transfer.accountId, transfer.amount);
         }
 
@@ -371,32 +371,32 @@ export default class TransferTransaction extends Transaction {
     /**
      * @internal
      * @param {AccountId | string} accountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @param {boolean} isApproved
      * @returns {TransferTransaction}
      */
-    _addHbarTransfer(accountId, amount, isApproved) {
+    _addU2UTransfer(accountId, amount, isApproved) {
         this._requireNotFrozen();
 
         const account =
             accountId instanceof AccountId
                 ? accountId.clone()
                 : AccountId.fromString(accountId);
-        const hbars = amount instanceof Hbar ? amount : new Hbar(amount);
+        const u2us = amount instanceof U2U ? amount : new U2U(amount);
 
-        for (const transfer of this._hbarTransfers) {
+        for (const transfer of this._U2UTransfers) {
             if (transfer.accountId.compare(account) === 0) {
-                transfer.amount = Hbar.fromTinybars(
-                    transfer.amount.toTinybars().add(hbars.toTinybars())
+                transfer.amount = U2U.fromTinyU2U(
+                    transfer.amount.toTinyU2U().add(u2us.toTinyU2U())
                 );
                 return this;
             }
         }
 
-        this._hbarTransfers.push(
+        this._U2UTransfers.push(
             new Transfer({
                 accountId: account,
-                amount: hbars,
+                amount: u2us,
                 isApproved,
             })
         );
@@ -407,21 +407,21 @@ export default class TransferTransaction extends Transaction {
     /**
      * @internal
      * @param {AccountId | string} accountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {TransferTransaction}
      */
-    addHbarTransfer(accountId, amount) {
-        return this._addHbarTransfer(accountId, amount, false);
+    addU2UTransfer(accountId, amount) {
+        return this._addU2UTransfer(accountId, amount, false);
     }
 
     /**
      * @internal
      * @param {AccountId | string} accountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {TransferTransaction}
      */
-    addApprovedHbarTransfer(accountId, amount) {
-        return this._addHbarTransfer(accountId, amount, true);
+    addApprovedU2UTransfer(accountId, amount) {
+        return this._addU2UTransfer(accountId, amount, true);
     }
 
     /**
@@ -429,7 +429,7 @@ export default class TransferTransaction extends Transaction {
      */
     _validateChecksums(client) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        for (const transfer of this._hbarTransfers) {
+        for (const transfer of this._U2UTransfers) {
             transfer.accountId.validateChecksum(client);
         }
 
@@ -626,18 +626,18 @@ export default class TransferTransaction extends Transaction {
     }
 
     /**
-     * @deprecated - Use `addApprovedHbarTransfer()` instead
+     * @deprecated - Use `addApprovedU2UTransfer()` instead
      * @param {AccountId | string} accountId
      * @param {boolean} isApproved
      * @returns {TransferTransaction}
      */
-    setHbarTransferApproval(accountId, isApproved) {
+    setU2UTransferApproval(accountId, isApproved) {
         const account =
             typeof accountId === "string"
                 ? AccountId.fromString(accountId)
                 : accountId;
 
-        for (const transfer of this._hbarTransfers) {
+        for (const transfer of this._U2UTransfers) {
             if (transfer.accountId.compare(account) === 0) {
                 transfer.isApproved = isApproved;
             }
@@ -869,14 +869,14 @@ export default class TransferTransaction extends Transaction {
             }
         }
 
-        this._hbarTransfers.sort((a, b) => a.accountId.compare(b.accountId));
+        this._U2UTransfers.sort((a, b) => a.accountId.compare(b.accountId));
 
         return {
             transfers: {
-                accountAmounts: this._hbarTransfers.map((transfer) => {
+                accountAmounts: this._U2UTransfers.map((transfer) => {
                     return {
                         accountID: transfer.accountId._toProtobuf(),
-                        amount: transfer.amount.toTinybars(),
+                        amount: transfer.amount.toTinyU2U(),
                         isApproval: transfer.isApproved,
                     };
                 }),

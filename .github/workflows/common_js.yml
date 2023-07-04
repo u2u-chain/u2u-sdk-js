@@ -47,13 +47,13 @@ jobs:
         with:
           version: 7.6.0
 
-      - name: Build @hashgraph/sdk
+      - name: Build @u2u/sdk
         run: task build
 
       - name: Install dependencies
         working-directory: common_js_test
         run: task install
-          
+
       - name: Test
         working-directory: common_js_test
         run: task test

@@ -115,13 +115,13 @@ export default class PublicKey extends Key {
     }
 
     /**
-     * @deprecated - use `@hashgraph/sdk`.PublicKey instead
+     * @deprecated - use `@u2u/sdk`.PublicKey instead
      * @param {Transaction} transaction
      * @returns {boolean}
      */
     verifyTransaction(transaction) {
         //NOSONAR
-        console.log("Deprecated: use `@hashgraph/sdk`.PublicKey instead");
+        console.log("Deprecated: use `@u2u/sdk`.PublicKey instead");
 
         transaction._requireFrozen();
 

@@ -11,7 +11,7 @@ export default {
         force: true,
         entries: [
             "./test/unit/AccountId.js",
-            "./test/unit/Hbar.js",
+            "./test/unit/U2U.js",
             "./test/unit/keccak256.js",
             "./test/unit/Transaction.js",
             "./test/unit/TransactionId.js",
@@ -29,7 +29,7 @@ export default {
             // will take care of this
             "../../src/index.js": "../../src/browser.js",
             "../src/index.js": "../src/browser.js",
-            // TODO: extract `encoding/hex.js` etc into a variable and call a function to generate 
+            // TODO: extract `encoding/hex.js` etc into a variable and call a function to generate
             // all the prefixes.
             "../../../src/encoding/hex.js": "../../../src/encoding/hex.browser.js",
             "../../src/encoding/hex.js": "../../src/encoding/hex.browser.js",

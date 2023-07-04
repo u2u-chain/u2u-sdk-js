@@ -5,7 +5,7 @@ import {
     ContractInfoQuery,
     FileCreateTransaction,
     FileDeleteTransaction,
-    Hbar,
+    U2U,
     Status,
 } from "../../src/exports.js";
 import IntegrationTestEnv from "./client/NodeIntegrationTestEnv.js";
@@ -56,7 +56,7 @@ describe("ContractInfo", function () {
 
         let info = await new ContractInfoQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(info.contractId.toString()).to.be.equal(contract.toString());
@@ -123,7 +123,7 @@ describe("ContractInfo", function () {
 
         let info = await new ContractInfoQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(info.contractId.toString()).to.be.equal(contract.toString());
@@ -180,7 +180,7 @@ describe("ContractInfo", function () {
 
         try {
             await new ContractInfoQuery()
-                .setQueryPayment(new Hbar(1))
+                .setQueryPayment(new U2U(1))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.InvalidContractId);
@@ -235,7 +235,7 @@ describe("ContractInfo", function () {
             .setContractId(contract)
             .getCost(env.client);
 
-        expect(cost.toTinybars().toInt()).to.be.at.least(1);
+        expect(cost.toTinyU2U().toInt()).to.be.at.least(1);
     });
 
     after(async function () {

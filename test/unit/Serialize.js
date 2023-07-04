@@ -2,7 +2,7 @@ import { expect } from "chai";
 
 import {
     AccountId,
-    Hbar,
+    U2U,
     PrivateKey,
     Timestamp,
     Transaction,
@@ -25,8 +25,8 @@ const params = {
     senderId: AccountId.fromString("0.0.123456"),
     recipientId: AccountId.fromString("0.0.654321"),
     validStart: Timestamp.fromDate(new Date(1640000000000)),
-    amount: Hbar.fromTinybars("50505050505"),
-    fee: Hbar.fromTinybars("100000000"),
+    amount: U2U.fromTinyU2U("50505050505"),
+    fee: U2U.fromTinyU2U("100000000"),
     memo: "Transaction (de)serialization test",
 };
 
@@ -52,8 +52,8 @@ function buildTx(params) {
         .setTransactionId(transactionId)
         .setNodeAccountIds([params.nodeId])
         .setTransactionMemo(params.memo)
-        .addHbarTransfer(params.senderId, params.amount.negated())
-        .addHbarTransfer(params.recipientId, params.amount);
+        .addU2UTransfer(params.senderId, params.amount.negated())
+        .addU2UTransfer(params.recipientId, params.amount);
     return unbuiltTx.freeze();
 }
 

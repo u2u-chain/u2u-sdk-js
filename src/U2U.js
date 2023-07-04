@@ -20,7 +20,7 @@
 
 import BigNumber from "bignumber.js";
 import { valueToLong } from "./long.js";
-import HbarUnit from "./HbarUnit.js";
+import U2UUnit from "./U2UUnit.js";
 
 import Long from "long";
 
@@ -28,13 +28,13 @@ import Long from "long";
  * @typedef {import("./long.js").LongObject} LongObject
  */
 
-export default class Hbar {
+export default class U2U {
     /**
      * @param {number | string | Long | LongObject | BigNumber} amount
-     * @param {HbarUnit=} unit
+     * @param {U2UUnit=} unit
      */
-    constructor(amount, unit = HbarUnit.Hbar) {
-        if (unit === HbarUnit.Tinybar) {
+    constructor(amount, unit = U2UUnit.U2U) {
+        if (unit === U2UUnit.TinyU2U) {
             this._valueInTinybar = valueToLong(amount);
         } else {
             /** @type {BigNumber} */
@@ -58,50 +58,50 @@ export default class Hbar {
             this._valueInTinybar = bigAmount.multipliedBy(unit._tinybar);
         }
         if (!this._valueInTinybar.isInteger()) {
-            throw new Error("Hbar in tinybars contains decimals");
+            throw new Error("U2U in tinybars contains decimals");
         }
     }
 
     /**
      * @param {number | Long | BigNumber} amount
-     * @param {HbarUnit} unit
-     * @returns {Hbar}
+     * @param {U2UUnit} unit
+     * @returns {U2U}
      */
     static from(amount, unit) {
-        return new Hbar(amount, unit);
+        return new U2U(amount, unit);
     }
 
     /**
      * @param {number | Long | string | BigNumber} amount
-     * @returns {Hbar}
+     * @returns {U2U}
      */
-    static fromTinybars(amount) {
+    static fromTinyU2U(amount) {
         if (typeof amount === "string") {
-            return this.fromString(amount, HbarUnit.Tinybar);
+            return this.fromString(amount, U2UUnit.TinyU2U);
         }
-        return new Hbar(amount, HbarUnit.Tinybar);
+        return new U2U(amount, U2UUnit.TinyU2U);
     }
 
     /**
      * @param {string} str
-     * @param {HbarUnit=} unit
-     * @returns {Hbar}
+     * @param {U2UUnit=} unit
+     * @returns {U2U}
      */
-    static fromString(str, unit = HbarUnit.Hbar) {
+    static fromString(str, unit = U2UUnit.U2U) {
         const pattern = /^((?:\+|-)?\d+(?:\.\d+)?)(?: (tℏ|μℏ|mℏ|ℏ|kℏ|Mℏ|Gℏ))?$/;
         if (pattern.test(str)) {
             let [amount, symbol] = str.split(" ");
             if (symbol != null) {
-                unit = HbarUnit.fromString(symbol);
+                unit = U2UUnit.fromString(symbol);
             }
-            return new Hbar(new BigNumber(amount), unit);
+            return new U2U(new BigNumber(amount), unit);
         } else {
             throw new Error("invalid argument provided");
         }
     }
 
     /**
-     * @param {HbarUnit} unit
+     * @param {U2UUnit} unit
      * @returns {BigNumber}
      */
     to(unit) {
@@ -112,21 +112,21 @@ export default class Hbar {
      * @returns {BigNumber}
      */
     toBigNumber() {
-        return this.to(HbarUnit.Hbar);
+        return this.to(U2UUnit.U2U);
     }
 
     /**
      * @returns {Long}
      */
-    toTinybars() {
+    toTinyU2U() {
         return Long.fromValue(this._valueInTinybar.toFixed());
     }
 
     /**
-     * @returns {Hbar}
+     * @returns {U2U}
      */
     negated() {
-        return Hbar.fromTinybars(this._valueInTinybar.negated());
+        return U2U.fromTinyU2U(this._valueInTinybar.negated());
     }
 
     /**
@@ -137,7 +137,7 @@ export default class Hbar {
     }
 
     /**
-     * @param {HbarUnit=} unit
+     * @param {U2UUnit=} unit
      * @returns {string}
      */
     toString(unit) {
@@ -152,10 +152,10 @@ export default class Hbar {
             this._valueInTinybar.isGreaterThan(-10000)
         ) {
             return `${this._valueInTinybar.toFixed()} ${
-                HbarUnit.Tinybar._symbol
+                U2UUnit.TinyU2U._symbol
             }`;
         }
 
-        return `${this.to(HbarUnit.Hbar).toString()} ${HbarUnit.Hbar._symbol}`;
+        return `${this.to(U2UUnit.U2U).toString()} ${U2UUnit.U2U._symbol}`;
     }
 }

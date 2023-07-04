@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Transaction, {
     TRANSACTION_REGISTRY,
 } from "../transaction/Transaction.js";
@@ -87,7 +87,7 @@ export default class FileAppendTransaction extends Transaction {
          */
         this._chunkSize = 4096;
 
-        this._defaultMaxTransactionFee = new Hbar(5);
+        this._defaultMaxTransactionFee = new U2U(5);
 
         if (props.fileId != null) {
             this.setFileId(props.fileId);

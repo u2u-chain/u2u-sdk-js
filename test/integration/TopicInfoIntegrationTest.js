@@ -89,7 +89,7 @@ describe("TopicInfo", function () {
             .setTopicId(topic)
             .getCost(env.client);
 
-        expect(cost.toTinybars().toInt()).to.be.at.least(1);
+        expect(cost.toTinyU2U().toInt()).to.be.at.least(1);
     });
 
     it("should error on query cost on deleted topic with INVALID_TOPIC_ID", async function () {

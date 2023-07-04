@@ -20,7 +20,7 @@
 
 import AccountId from "../account/AccountId.js";
 import AccountBalanceQuery from "../account/AccountBalanceQuery.js";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Network from "./Network.js";
 import MirrorNetwork from "./MirrorNetwork.js";
 import PublicKey from "../PublicKey.js";
@@ -100,15 +100,15 @@ export default class Client {
 
         /**
          * @private
-         * @type {?Hbar}
+         * @type {?U2U}
          */
         this._defaultMaxTransactionFee = null;
 
         /**
          * @private
-         * @type {Hbar}
+         * @type {U2U}
          */
-        this._maxQueryPayment = new Hbar(1);
+        this._maxQueryPayment = new U2U(1);
 
         if (props != null) {
             if (props.operator != null) {
@@ -361,7 +361,7 @@ export default class Client {
 
     /**
      * @deprecated - Use `defaultMaxTransactionFee` instead
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get maxTransactionFee() {
         return this._defaultMaxTransactionFee;
@@ -371,7 +371,7 @@ export default class Client {
      * @deprecated - Use `setDefaultMaxTransactionFee()` instead
      * Set the maximum fee to be paid for transactions
      * executed by this client.
-     * @param {Hbar} maxTransactionFee
+     * @param {U2U} maxTransactionFee
      * @returns {this}
      */
     setMaxTransactionFee(maxTransactionFee) {
@@ -380,7 +380,7 @@ export default class Client {
     }
 
     /**
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get defaultMaxTransactionFee() {
         return this._defaultMaxTransactionFee;
@@ -390,7 +390,7 @@ export default class Client {
      * Set the defaultimum fee to be paid for transactions
      * executed by this client.
      *
-     * @param {Hbar} defaultMaxTransactionFee
+     * @param {U2U} defaultMaxTransactionFee
      * @returns {this}
      */
     setDefaultMaxTransactionFee(defaultMaxTransactionFee) {
@@ -418,7 +418,7 @@ export default class Client {
     }
 
     /**
-     * @returns {Hbar}
+     * @returns {U2U}
      */
     get maxQueryPayment() {
         return this._maxQueryPayment;
@@ -427,7 +427,7 @@ export default class Client {
     /**
      * Set the maximum payment allowable for queries.
      *
-     * @param {Hbar} maxQueryPayment
+     * @param {U2U} maxQueryPayment
      * @returns {Client<ChannelT, MirrorChannelT>}
      */
     setMaxQueryPayment(maxQueryPayment) {

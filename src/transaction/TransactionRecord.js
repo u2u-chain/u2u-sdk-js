@@ -21,7 +21,7 @@
 import TransactionReceipt from "./TransactionReceipt.js";
 import TransactionId from "./TransactionId.js";
 import Timestamp from "../Timestamp.js";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Transfer from "../Transfer.js";
 import ContractFunctionResult from "../contract/ContractFunctionResult.js";
 import TokenTransferMap from "../account/TokenTransferMap.js";
@@ -37,7 +37,7 @@ import EvmAddress from "../EvmAddress.js";
 
 /**
  * @typedef {import("../token/TokenId.js").default} TokenId
- * @typedef {import("../account/HbarAllowance.js").default} HbarAllowance
+ * @typedef {import("../account/U2UAllowance.js").default} U2UAllowance
  * @typedef {import("../account/TokenAllowance.js").default} TokenAllowance
  * @typedef {import("../account/TokenNftAllowance.js").default} TokenNftAllowance
  */
@@ -58,7 +58,7 @@ export default class TransactionRecord {
      * @param {Timestamp} props.consensusTimestamp
      * @param {TransactionId} props.transactionId
      * @param {string} props.transactionMemo
-     * @param {Hbar} props.transactionFee
+     * @param {U2U} props.transactionFee
      * @param {Transfer[]} props.transfers
      * @param {TokenTransferMap} props.tokenTransfers
      * @param {TokenTransfer[]} props.tokenTransfersList
@@ -70,7 +70,7 @@ export default class TransactionRecord {
      * @param {PublicKey | null} props.aliasKey
      * @param {TransactionRecord[]} props.duplicates
      * @param {TransactionRecord[]} props.children
-     * @param {HbarAllowance[]} props.hbarAllowanceAdjustments
+     * @param {U2UAllowance[]} props.U2UAllowanceAdjustments
      * @param {TokenAllowance[]} props.tokenAllowanceAdjustments
      * @param {TokenNftAllowance[]} props.nftAllowanceAdjustments
      * @param {?Uint8Array} props.ethereumHash
@@ -220,7 +220,7 @@ export default class TransactionRecord {
          * @readonly
          */
         // eslint-disable-next-line deprecation/deprecation
-        this.hbarAllowanceAdjustments = props.hbarAllowanceAdjustments;
+        this.U2UAllowanceAdjustments = props.U2UAllowanceAdjustments;
 
         /**
          * @deprecated
@@ -343,7 +343,7 @@ export default class TransactionRecord {
 
                 transactionFee:
                     this.transactionFee != null
-                        ? this.transactionFee.toTinybars()
+                        ? this.transactionFee.toTinyU2U()
                         : null,
 
                 contractCallResult:
@@ -474,7 +474,7 @@ export default class TransactionRecord {
                 )
             ),
             transactionMemo: record.memo != null ? record.memo : "",
-            transactionFee: Hbar.fromTinybars(
+            transactionFee: U2U.fromTinyU2U(
                 record.transactionFee != null ? record.transactionFee : 0
             ),
             transfers: Transfer._fromProtobuf(
@@ -523,7 +523,7 @@ export default class TransactionRecord {
             aliasKey,
             duplicates,
             children,
-            hbarAllowanceAdjustments: [],
+            U2UAllowanceAdjustments: [],
             tokenAllowanceAdjustments: [],
             nftAllowanceAdjustments: [],
             ethereumHash:

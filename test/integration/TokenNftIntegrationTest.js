@@ -1,6 +1,6 @@
 import {
     AccountCreateTransaction,
-    Hbar,
+    U2U,
     NftId,
     PrivateKey,
     Status,
@@ -32,7 +32,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -131,7 +131,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -189,7 +189,7 @@ describe("TokenNft", function () {
             .setNftId(new NftId(token, serial))
             .getCost(env.client);
 
-        expect(cost.toTinybars().toInt()).to.be.at.least(1);
+        expect(cost.toTinyU2U().toInt()).to.be.at.least(1);
     });
 
     it("Cannot burn NFTs when NFT is not owned by treasury", async function () {
@@ -201,7 +201,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -299,7 +299,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -473,7 +473,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -545,7 +545,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -609,7 +609,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -722,7 +722,7 @@ describe("TokenNft", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;

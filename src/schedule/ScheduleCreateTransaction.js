@@ -25,7 +25,7 @@ import Transaction, {
     SCHEDULE_CREATE_TRANSACTION,
 } from "../transaction/Transaction.js";
 import Key from "../Key.js";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import * as HashgraphProto from "@hashgraph/proto";
 
 /**
@@ -106,7 +106,7 @@ export default class ScheduleCreateTransaction extends Transaction {
             this.setScheduleMemo(props.scheduleMemo);
         }
 
-        this._defaultMaxTransactionFee = new Hbar(5);
+        this._defaultMaxTransactionFee = new U2U(5);
     }
 
     /**

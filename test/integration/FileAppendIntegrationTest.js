@@ -3,7 +3,7 @@ import {
     FileCreateTransaction,
     FileDeleteTransaction,
     FileInfoQuery,
-    Hbar,
+    U2U,
     Status,
 } from "../../src/exports.js";
 import { bigContents } from "./contents.js";
@@ -35,7 +35,7 @@ describe("FileAppend", function () {
 
         let info = await new FileInfoQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(22))
+            .setQueryPayment(new U2U(22))
             .execute(env.client);
 
         expect(info.fileId.toString()).to.be.equal(file.toString());
@@ -57,7 +57,7 @@ describe("FileAppend", function () {
 
         info = await new FileInfoQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(info.fileId.toString()).to.be.equal(file.toString());
@@ -97,7 +97,7 @@ describe("FileAppend", function () {
 
         let info = await new FileInfoQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(22))
+            .setQueryPayment(new U2U(22))
             .execute(env.client);
 
         expect(info.fileId.toString()).to.be.equal(file.toString());
@@ -119,7 +119,7 @@ describe("FileAppend", function () {
 
         info = await new FileInfoQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(info.fileId.toString()).to.be.equal(file.toString());

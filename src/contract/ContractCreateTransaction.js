@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import AccountId from "../account/AccountId.js";
 import FileId from "../file/FileId.js";
 import ContractFunctionParameters from "./ContractFunctionParameters.js";
@@ -56,7 +56,7 @@ export default class ContractCreateTransaction extends Transaction {
      * @param {Uint8Array} [props.bytecode]
      * @param {Key} [props.adminKey]
      * @param {number | Long} [props.gas]
-     * @param {number | string | Long | BigNumber | Hbar} [props.initialBalance]
+     * @param {number | string | Long | BigNumber | U2U} [props.initialBalance]
      * @param {AccountId | string} [props.proxyAccountId]
      * @param {Duration | Long | number} [props.autoRenewPeriod]
      * @param {Uint8Array} [props.constructorParameters]
@@ -96,7 +96,7 @@ export default class ContractCreateTransaction extends Transaction {
 
         /**
          * @private
-         * @type {?Hbar}
+         * @type {?U2U}
          */
         this._initialBalance = null;
 
@@ -130,7 +130,7 @@ export default class ContractCreateTransaction extends Transaction {
          */
         this._maxAutomaticTokenAssociations = null;
 
-        this._defaultMaxTransactionFee = new Hbar(20);
+        this._defaultMaxTransactionFee = new U2U(20);
 
         /**
          * @private
@@ -379,7 +379,7 @@ export default class ContractCreateTransaction extends Transaction {
     }
 
     /**
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get initialBalance() {
         return this._initialBalance;
@@ -388,15 +388,15 @@ export default class ContractCreateTransaction extends Transaction {
     /**
      * Set the initial amount to transfer into this contract.
      *
-     * @param {number | string | Long | BigNumber | Hbar} initialBalance
+     * @param {number | string | Long | BigNumber | U2U} initialBalance
      * @returns {this}
      */
     setInitialBalance(initialBalance) {
         this._requireNotFrozen();
         this._initialBalance =
-            initialBalance instanceof Hbar
+            initialBalance instanceof U2U
                 ? initialBalance
-                : new Hbar(initialBalance);
+                : new U2U(initialBalance);
 
         return this;
     }
@@ -633,7 +633,7 @@ export default class ContractCreateTransaction extends Transaction {
             gas: this._gas,
             initialBalance:
                 this._initialBalance != null
-                    ? this._initialBalance.toTinybars()
+                    ? this._initialBalance.toTinyU2U()
                     : null,
             proxyAccountID:
                 this._proxyAccountId != null

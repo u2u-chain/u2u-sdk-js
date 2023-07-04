@@ -6,7 +6,7 @@ import {
     ContractFunctionParameters,
     FileCreateTransaction,
     FileDeleteTransaction,
-    Hbar,
+    U2U,
     Status,
     PrivateKey,
     FileAppendTransaction,
@@ -64,7 +64,7 @@ describe("ContractCallIntegration", function () {
 
         const callQuery = new ContractCallQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .setGas(75000)
             .setFunction("getMessage");
 
@@ -89,7 +89,7 @@ describe("ContractCallIntegration", function () {
 
         result = await new ContractCallQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(5))
+            .setQueryPayment(new U2U(5))
             .setGas(75000)
             .setFunction("getMessage")
             .execute(env.client);
@@ -153,9 +153,9 @@ describe("ContractCallIntegration", function () {
         try {
             await new ContractCallQuery()
                 .setContractId(contract)
-                .setQueryPayment(new Hbar(1))
+                .setQueryPayment(new U2U(1))
                 .setGas(75000)
-                .setMaxQueryPayment(new Hbar(5))
+                .setMaxQueryPayment(new U2U(5))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.ContractRevertExecuted);
@@ -222,8 +222,8 @@ describe("ContractCallIntegration", function () {
         try {
             await new ContractCallQuery()
                 .setContractId(contract)
-                .setQueryPayment(new Hbar(1))
-                .setMaxQueryPayment(new Hbar(5))
+                .setQueryPayment(new U2U(1))
+                .setMaxQueryPayment(new U2U(5))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.InsufficientGas);
@@ -291,8 +291,8 @@ describe("ContractCallIntegration", function () {
             await new ContractCallQuery()
                 .setGas(75000)
                 .setFunction("getMessage")
-                .setQueryPayment(new Hbar(1))
-                .setMaxQueryPayment(new Hbar(5))
+                .setQueryPayment(new U2U(1))
+                .setMaxQueryPayment(new U2U(5))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.InvalidContractId);
@@ -381,7 +381,7 @@ describe("ContractCallIntegration", function () {
                 )
                 //Set the query payment for the node returning the request
                 //This value must cover the cost of the request otherwise will fail
-                .setQueryPayment(new Hbar(35));
+                .setQueryPayment(new U2U(35));
 
             //Submit to a Hedera network
             //   const txResponse = await contractQuery.execute(client);

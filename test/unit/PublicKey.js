@@ -15,8 +15,8 @@ describe("PublicKey", function () {
         let transaction = new TransferTransaction()
             .setTransactionId(TransactionId.generate(new AccountId(5)))
             .setNodeAccountIds([new AccountId(6)])
-            .addHbarTransfer("0.0.3", -1)
-            .addHbarTransfer("0.0.4", 1)
+            .addU2UTransfer("0.0.3", -1)
+            .addU2UTransfer("0.0.4", 1)
             .freeze();
 
         await transaction.sign(key1);

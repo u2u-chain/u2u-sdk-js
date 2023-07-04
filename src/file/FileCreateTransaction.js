@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Transaction, {
     TRANSACTION_REGISTRY,
     DEFAULT_AUTO_RENEW_PERIOD,
@@ -87,7 +87,7 @@ export default class FileCreateTransaction extends Transaction {
          */
         this._fileMemo = null;
 
-        this._defaultMaxTransactionFee = new Hbar(5);
+        this._defaultMaxTransactionFee = new U2U(5);
 
         if (props.keys != null) {
             this.setKeys(props.keys);

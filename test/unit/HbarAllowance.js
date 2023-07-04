@@ -1,23 +1,23 @@
 import { expect } from "chai";
 
-import { HbarAllowance, AccountId, Hbar } from "../../src/index.js";
+import { U2UAllowance, AccountId, U2U } from "../../src/index.js";
 
-describe("HbarAllowance", function () {
+describe("U2UAllowance", function () {
     it("toProtobuf()", function () {
         const ownerAccountId = new AccountId(3);
         const spenderAccountId = new AccountId(4);
-        const hbarAmount = Hbar.fromTinybars(100);
+        const U2UAmount = U2U.fromTinyU2U(100);
 
-        const allowance = new HbarAllowance({
+        const allowance = new U2UAllowance({
             ownerAccountId,
             spenderAccountId,
-            amount: hbarAmount,
+            amount: U2UAmount,
         });
 
         expect(allowance._toProtobuf()).to.deep.equal({
             owner: ownerAccountId._toProtobuf(),
             spender: spenderAccountId._toProtobuf(),
-            amount: hbarAmount.toTinybars(),
+            amount: U2UAmount.toTinyU2U(),
         });
     });
 });

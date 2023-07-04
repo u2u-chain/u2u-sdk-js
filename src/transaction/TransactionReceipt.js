@@ -105,7 +105,7 @@ export default class TransactionReceipt {
         this.scheduleId = props.scheduleId;
 
         /**
-         * The exchange rate of Hbars to cents (USD).
+         * The exchange rate of u2us to cents (USD).
          *
          * @readonly
          */

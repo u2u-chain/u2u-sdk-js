@@ -19,7 +19,7 @@
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as HashgraphProto from "@hashgraph/proto";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import AccountId from "./AccountId.js";
 import Transaction, {
     DEFAULT_AUTO_RENEW_PERIOD,
@@ -46,7 +46,7 @@ export default class AccountCreateTransaction extends Transaction {
     /**
      * @param {object} [props]
      * @param {Key} [props.key]
-     * @param {number | string | Long | BigNumber | Hbar} [props.initialBalance]
+     * @param {number | string | Long | BigNumber | U2U} [props.initialBalance]
      * @param {boolean} [props.receiverSignatureRequired]
      * @param {AccountId} [props.proxyAccountId]
      * @param {Duration | Long | number} [props.autoRenewPeriod]
@@ -68,19 +68,19 @@ export default class AccountCreateTransaction extends Transaction {
 
         /**
          * @private
-         * @type {?Hbar}
+         * @type {?U2U}
          */
         this._initialBalance = null;
 
         /**
          * @private
-         * @type {Hbar}
+         * @type {U2U}
          */
         this._sendRecordThreshold = DEFAULT_RECORD_THRESHOLD;
 
         /**
          * @private
-         * @type {Hbar}
+         * @type {U2U}
          */
         this._receiveRecordThreshold = DEFAULT_RECORD_THRESHOLD;
 
@@ -293,7 +293,7 @@ export default class AccountCreateTransaction extends Transaction {
     }
 
     /**
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get initialBalance() {
         return this._initialBalance;
@@ -302,15 +302,15 @@ export default class AccountCreateTransaction extends Transaction {
     /**
      * Set the initial amount to transfer into this account.
      *
-     * @param {number | string | Long | BigNumber | Hbar} initialBalance
+     * @param {number | string | Long | BigNumber | U2U} initialBalance
      * @returns {this}
      */
     setInitialBalance(initialBalance) {
         this._requireNotFrozen();
         this._initialBalance =
-            initialBalance instanceof Hbar
+            initialBalance instanceof U2U
                 ? initialBalance
-                : new Hbar(initialBalance);
+                : new U2U(initialBalance);
 
         return this;
     }
@@ -324,7 +324,7 @@ export default class AccountCreateTransaction extends Transaction {
 
     /**
      * Set to true to require the key for this account to sign any transfer of
-     * hbars to this account.
+     * u2us to this account.
      *
      * @param {boolean} receiverSignatureRequired
      * @returns {this}
@@ -571,15 +571,15 @@ export default class AccountCreateTransaction extends Transaction {
             key: this._key != null ? this._key._toProtobufKey() : null,
             initialBalance:
                 this._initialBalance != null
-                    ? this._initialBalance.toTinybars()
+                    ? this._initialBalance.toTinyU2U()
                     : null,
             autoRenewPeriod: this._autoRenewPeriod._toProtobuf(),
             proxyAccountID:
                 this._proxyAccountId != null
                     ? this._proxyAccountId._toProtobuf()
                     : null,
-            receiveRecordThreshold: this._receiveRecordThreshold.toTinybars(),
-            sendRecordThreshold: this._sendRecordThreshold.toTinybars(),
+            receiveRecordThreshold: this._receiveRecordThreshold.toTinyU2U(),
+            sendRecordThreshold: this._sendRecordThreshold.toTinyU2U(),
             receiverSigRequired: this._receiverSignatureRequired,
             memo: this._accountMemo,
             maxAutomaticTokenAssociations:

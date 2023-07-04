@@ -2,7 +2,7 @@ import {
     FileCreateTransaction,
     FileDeleteTransaction,
     FileInfoQuery,
-    Hbar,
+    U2U,
     Status,
     Timestamp,
 } from "../../src/exports.js";
@@ -34,7 +34,7 @@ describe("FileCreate", function () {
 
         let info = await new FileInfoQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(22))
+            .setQueryPayment(new U2U(22))
             .execute(env.client);
 
         expect(info.fileId.toString()).to.be.equal(file.toString());

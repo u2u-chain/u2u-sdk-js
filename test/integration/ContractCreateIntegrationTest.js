@@ -5,7 +5,7 @@ import {
     ContractInfoQuery,
     FileCreateTransaction,
     FileDeleteTransaction,
-    Hbar,
+    U2U,
     Status,
 } from "../../src/exports.js";
 import IntegrationTestEnv from "./client/NodeIntegrationTestEnv.js";
@@ -57,7 +57,7 @@ describe("ContractCreate", function () {
 
         let info = await new ContractInfoQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(info.contractId.toString()).to.be.equal(contract.toString());
@@ -125,7 +125,7 @@ describe("ContractCreate", function () {
 
         let info = await new ContractInfoQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(info.contractId.toString()).to.be.equal(contract.toString());

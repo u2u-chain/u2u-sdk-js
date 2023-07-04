@@ -2,7 +2,7 @@ import {
     FileContentsQuery,
     FileCreateTransaction,
     FileDeleteTransaction,
-    Hbar,
+    U2U,
     Status,
 } from "../../src/exports.js";
 import * as utf8 from "../../src/encoding/utf8.js";
@@ -34,7 +34,7 @@ describe("FileContents", function () {
 
         const contents = await new FileContentsQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(utf8.decode(contents)).to.be.equal(
@@ -67,7 +67,7 @@ describe("FileContents", function () {
 
         const contents = await new FileContentsQuery()
             .setFileId(file)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(utf8.decode(contents)).to.be.equal("");
@@ -86,7 +86,7 @@ describe("FileContents", function () {
 
         try {
             await new FileContentsQuery()
-                .setQueryPayment(new Hbar(1))
+                .setQueryPayment(new U2U(1))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.InvalidFileId);

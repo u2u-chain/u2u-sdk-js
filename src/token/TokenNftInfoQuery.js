@@ -24,7 +24,7 @@ import AccountId from "../account/AccountId.js";
 import TokenId from "../token/TokenId.js";
 import TokenNftInfo from "./TokenNftInfo.js";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Long from "long";
 
 /**
@@ -296,7 +296,7 @@ export default class TokenNftInfoQuery extends Query {
     /**
      * @override
      * @param {import("../client/Client.js").default<Channel, *>} client
-     * @returns {Promise<Hbar>}
+     * @returns {Promise<U2U>}
      */
     async getCost(client) {
         return super.getCost(client);

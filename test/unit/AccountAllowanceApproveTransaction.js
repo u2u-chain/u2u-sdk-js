@@ -5,7 +5,7 @@ import Long from "long";
 import {
     AccountAllowanceApproveTransaction,
     AccountId,
-    Hbar,
+    U2U,
     NftId,
     Timestamp,
     TokenId,
@@ -25,7 +25,7 @@ describe("AccountAllowanceApproveTransaction", function () {
         const spenderAccountId2 = new AccountId(7890);
         const nodeAccountId = new AccountId(10, 11, 12);
         const timestamp1 = new Timestamp(14, 15);
-        const hbarAmount = Hbar.fromTinybars(100);
+        const U2UAmount = U2U.fromTinyU2U(100);
         const tokenAmount = Long.fromNumber(101);
         const ownerAccountId = new AccountId(20);
 
@@ -34,7 +34,7 @@ describe("AccountAllowanceApproveTransaction", function () {
                 TransactionId.withValidStart(spenderAccountId1, timestamp1)
             )
             .setNodeAccountIds([nodeAccountId])
-            .approveHbarAllowance(ownerAccountId, spenderAccountId1, hbarAmount)
+            .approveU2UAllowance(ownerAccountId, spenderAccountId1, U2UAmount)
             .approveTokenAllowance(
                 tokenId1,
                 ownerAccountId,
@@ -59,7 +59,7 @@ describe("AccountAllowanceApproveTransaction", function () {
             cryptoAllowances: [
                 {
                     owner: ownerAccountId._toProtobuf(),
-                    amount: hbarAmount.toTinybars(),
+                    amount: U2UAmount.toTinyU2U(),
                     spender: spenderAccountId1._toProtobuf(),
                 },
             ],

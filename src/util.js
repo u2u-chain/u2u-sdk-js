@@ -22,7 +22,7 @@ import BigNumber from "bignumber.js";
 import Long from "long";
 
 /**
- * @typedef {import("./Hbar.js").default} Hbar
+ * @typedef {import("./U2U.js").default} U2U
  */
 
 /**
@@ -139,7 +139,7 @@ export function isStringOrUint8Array(variable) {
 /**
  * Takes any param and returns false if null or undefined.
  *
- * @template {Long | Hbar} T
+ * @template {Long | U2U} T
  * @param {T} variable
  * @returns {T}
  */

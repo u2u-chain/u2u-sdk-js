@@ -1,4 +1,4 @@
-const { Client, AccountBalanceQuery } = require("@hashgraph/sdk");
+const { Client, AccountBalanceQuery } = require("@u2u/sdk");
 
 describe("CommonJS", function () {
     it("it should query each node's balance", async function () {

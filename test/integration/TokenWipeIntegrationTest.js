@@ -1,7 +1,7 @@
 import {
     AccountCreateTransaction,
     AccountInfoQuery,
-    Hbar,
+    U2U,
     PrivateKey,
     Status,
     TokenAssociateTransaction,
@@ -28,7 +28,7 @@ describe("TokenWipe", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const account = (await response.getReceipt(env.client)).accountId;
@@ -118,7 +118,7 @@ describe("TokenWipe", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const account = (await response.getReceipt(env.client)).accountId;
@@ -193,7 +193,7 @@ describe("TokenWipe", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const account = (await response.getReceipt(env.client)).accountId;

@@ -26,8 +26,8 @@ import ContractId from "../contract/ContractId.js";
 import TokenId from "../token/TokenId.js";
 import NftId from "../token/NftId.js";
 import Long from "long";
-import Hbar from "../Hbar.js";
-import HbarAllowance from "./HbarAllowance.js";
+import U2U from "../U2U.js";
+import U2UAllowance from "./U2UAllowance.js";
 import TokenAllowance from "./TokenAllowance.js";
 import TokenNftAllowance from "./TokenNftAllowance.js";
 
@@ -57,7 +57,7 @@ import TokenNftAllowance from "./TokenNftAllowance.js";
 export default class AccountAllowanceApproveTransaction extends Transaction {
     /**
      * @param {object} [props]
-     * @param {HbarAllowance[]} [props.hbarApprovals]
+     * @param {U2UAllowance[]} [props.U2UApprovals]
      * @param {TokenAllowance[]} [props.tokenApprovals]
      * @param {TokenNftAllowance[]} [props.nftApprovals]
      */
@@ -66,10 +66,10 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
 
         /**
          * @private
-         * @type {HbarAllowance[]}
+         * @type {U2UAllowance[]}
          */
-        this._hbarApprovals =
-            props.hbarApprovals != null ? props.hbarApprovals : [];
+        this._U2UApprovals =
+            props.U2UApprovals != null ? props.U2UApprovals : [];
 
         /**
          * @private
@@ -110,10 +110,10 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
 
         return Transaction._fromProtobufTransactions(
             new AccountAllowanceApproveTransaction({
-                hbarApprovals: (allowanceApproval.cryptoAllowances != null
+                U2UApprovals: (allowanceApproval.cryptoAllowances != null
                     ? allowanceApproval.cryptoAllowances
                     : []
-                ).map((approval) => HbarAllowance._fromProtobuf(approval)),
+                ).map((approval) => U2UAllowance._fromProtobuf(approval)),
                 tokenApprovals: (allowanceApproval.tokenAllowances != null
                     ? allowanceApproval.tokenAllowances
                     : []
@@ -132,23 +132,23 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
     }
 
     /**
-     * @returns {HbarAllowance[]}
+     * @returns {U2UAllowance[]}
      */
-    get hbarApprovals() {
-        return this._hbarApprovals;
+    get U2UApprovals() {
+        return this._U2UApprovals;
     }
 
     /**
      * @param {AccountId | string} ownerAccountId
      * @param {AccountId | ContractId | string} spenderAccountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {AccountAllowanceApproveTransaction}
      */
-    approveHbarAllowance(ownerAccountId, spenderAccountId, amount) {
+    approveU2UAllowance(ownerAccountId, spenderAccountId, amount) {
         this._requireNotFrozen();
 
-        this._hbarApprovals.push(
-            new HbarAllowance({
+        this._U2UApprovals.push(
+            new U2UAllowance({
                 spenderAccountId:
                     typeof spenderAccountId === "string"
                         ? AccountId.fromString(spenderAccountId)
@@ -165,7 +165,7 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
                               ownerAccountId.toSolidityAddress()
                           )
                         : ownerAccountId,
-                amount: amount instanceof Hbar ? amount : new Hbar(amount),
+                amount: amount instanceof U2U ? amount : new U2U(amount),
             })
         );
 
@@ -173,21 +173,21 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
     }
 
     /**
-     * @deprecated - Use `approveHbarAllowance()` instead
+     * @deprecated - Use `approveU2UAllowance()` instead
      * @param {AccountId | string} spenderAccountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {AccountAllowanceApproveTransaction}
      */
-    addHbarAllowance(spenderAccountId, amount) {
+    addU2UAllowance(spenderAccountId, amount) {
         this._requireNotFrozen();
 
-        this._hbarApprovals.push(
-            new HbarAllowance({
+        this._U2UApprovals.push(
+            new U2UAllowance({
                 spenderAccountId:
                     typeof spenderAccountId === "string"
                         ? AccountId.fromString(spenderAccountId)
                         : spenderAccountId,
-                amount: amount instanceof Hbar ? amount : new Hbar(amount),
+                amount: amount instanceof U2U ? amount : new U2U(amount),
                 ownerAccountId: null,
             })
         );
@@ -503,7 +503,7 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
      * @param {Client} client
      */
     _validateChecksums(client) {
-        this._hbarApprovals.map((approval) =>
+        this._U2UApprovals.map((approval) =>
             approval._validateChecksums(client)
         );
         this._tokenApprovals.map((approval) =>
@@ -541,7 +541,7 @@ export default class AccountAllowanceApproveTransaction extends Transaction {
      */
     _makeTransactionData() {
         return {
-            cryptoAllowances: this._hbarApprovals.map((approval) =>
+            cryptoAllowances: this._U2UApprovals.map((approval) =>
                 approval._toProtobuf()
             ),
             tokenAllowances: this._tokenApprovals.map((approval) =>

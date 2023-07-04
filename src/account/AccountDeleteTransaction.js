@@ -41,7 +41,7 @@ import Transaction, {
  */
 
 /**
- * Marks an account as deleted, moving all its current hbars to another account.
+ * Marks an account as deleted, moving all its current u2us to another account.
  *
  * It will remain in the ledger, marked as deleted, until it expires.
  * Transfers into it a deleted account fail. But a deleted account can still have its
@@ -157,7 +157,7 @@ export default class AccountDeleteTransaction extends Transaction {
     }
 
     /**
-     * Set the account ID which will receive all remaining hbars.
+     * Set the account ID which will receive all remaining u2us.
      *
      * @param {AccountId | string} transferAccountId
      * @returns {AccountDeleteTransaction}

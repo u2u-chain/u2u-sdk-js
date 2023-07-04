@@ -51,7 +51,7 @@ jobs:
               with:
                   version: 7.6.0
 
-            - name: Build @hashgraph/sdk
+            - name: Build @u2u/sdk
               run: task build
 
     test:
@@ -96,7 +96,7 @@ jobs:
               with:
                   version: 7.6.0
 
-            - name: Build @hashgraph/sdk
+            - name: Build @u2u/sdk
               run: task build
 
             - name: Start the local node
@@ -120,8 +120,8 @@ jobs:
               working-directory: packages/cryptography
               run: task test:unit:codecov
 
-            - name: Unit Test @hashgraph/sdk
+            - name: Unit Test @u2u/sdk
               run: task test:unit
 
-            - name: Codecov @hashgraph/sdk
+            - name: Codecov @u2u/sdk
               run: task test:unit:codecov

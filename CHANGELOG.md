@@ -1163,7 +1163,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   `Hbar.fromTinybar()` supports `BigNumber`
--   `Hbar.toString()` supports `HbarUnit`
+-   `Hbar.toString()` supports `U2UUnit`
 -   Implemented to and from bytes for `TopicInfo` and `TokenInfo`
 -   Support for `sign-on-demand`
     -   This is disabled by default to you'll need to enable it using `Client.setSignOnDemand(true)`
@@ -1210,7 +1210,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Exposed `AccountBalance.tokenDecimals`
 -   Support for `string` parameters in `Hbar.fromTinybars()`
--   `Hbar.toBigNumber()` which is a simple wrapper around `Hbar.to(HbarUnit.Hbar)`
+-   `Hbar.toBigNumber()` which is a simple wrapper around `Hbar.to(U2UUnit.Hbar)`
 -   `AccountBalance.toJSON()`
 -   Support for `maxBackoff`, `maxAttempts`, `retryHandler`, and `completionHandler` in `TopicMessageQuery`
 -   Default logging behavior to `TopicMessageQuery` if an error handler or completion handler was not set
@@ -1230,7 +1230,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   `PrivateKey.legacyDerive()` - Derive private key using legacy derivations
 -   `Hbar.fromTinybars()` supports `string` parameter
--   `Hbar.toBigNumber()` aliases `Hbar.to(HbarUnit.Hbar)`
+-   `Hbar.toBigNumber()` aliases `Hbar.to(U2UUnit.Hbar)`
 -   `AccountBalance.tokenDecimals` - Represents the decimals on a token
 -   `AccountBalance.toString()` should print a `JSON.stringified()` output
 -   `AccountBalance.toJSON()`

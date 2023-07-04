@@ -4,7 +4,7 @@ import {
     CustomFixedFee,
     CustomFractionalFee,
     CustomRoyaltyFee,
-    Hbar,
+    U2U,
     KeyList,
     PrivateKey,
     Status,
@@ -319,7 +319,7 @@ describe("CustomFees", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -561,7 +561,7 @@ describe("CustomFees", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -660,7 +660,7 @@ describe("CustomFees", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -1055,7 +1055,7 @@ describe("CustomFees", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -1064,7 +1064,7 @@ describe("CustomFees", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(key)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -1373,21 +1373,21 @@ describe("CustomFees", function () {
         try {
             await (
                 await new TransferTransaction()
-                    .addHbarTransfer(env.operatorId, -14)
-                    .addHbarTransfer(account1, 1)
-                    .addHbarTransfer(account2, 1)
-                    .addHbarTransfer(account3, 1)
-                    .addHbarTransfer(account4, 1)
-                    .addHbarTransfer(account5, 1)
-                    .addHbarTransfer(account6, 1)
-                    .addHbarTransfer(account7, 1)
-                    .addHbarTransfer(account8, 1)
-                    .addHbarTransfer(account9, 1)
-                    .addHbarTransfer("0.0.3", 1)
-                    .addHbarTransfer("0.0.4", 1)
-                    .addHbarTransfer("0.0.5", 1)
-                    .addHbarTransfer("0.0.6", 1)
-                    .addHbarTransfer("0.0.7", 1)
+                    .addU2UTransfer(env.operatorId, -14)
+                    .addU2UTransfer(account1, 1)
+                    .addU2UTransfer(account2, 1)
+                    .addU2UTransfer(account3, 1)
+                    .addU2UTransfer(account4, 1)
+                    .addU2UTransfer(account5, 1)
+                    .addU2UTransfer(account6, 1)
+                    .addU2UTransfer(account7, 1)
+                    .addU2UTransfer(account8, 1)
+                    .addU2UTransfer(account9, 1)
+                    .addU2UTransfer("0.0.3", 1)
+                    .addU2UTransfer("0.0.4", 1)
+                    .addU2UTransfer("0.0.5", 1)
+                    .addU2UTransfer("0.0.6", 1)
+                    .addU2UTransfer("0.0.7", 1)
                     .addTokenTransfer(token1, env.operatorId, -2)
                     .addTokenTransfer(token1, account1, 1)
                     .addTokenTransfer(token1, account2, 1)

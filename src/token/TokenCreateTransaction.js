@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Transaction, {
     DEFAULT_AUTO_RENEW_PERIOD,
     TRANSACTION_REGISTRY,
@@ -210,7 +210,7 @@ export default class TokenCreateTransaction extends Transaction {
          */
         this._maxSupply = null;
 
-        this._defaultMaxTransactionFee = new Hbar(30);
+        this._defaultMaxTransactionFee = new U2U(30);
 
         if (props.tokenName != null) {
             this.setTokenName(props.tokenName);

@@ -1,8 +1,8 @@
 import { expect } from "chai";
 
-import { Hbar, HbarUnit } from "../../src/index.js";
+import { U2U, U2UUnit } from "../../src/index.js";
 
-describe("Hbar", function () {
+describe("U2U", function () {
     it("should pass regex, convert, and reverse [to|from]String", function () {
         let check = [
             ["0 ℏ", "0 tℏ"],
@@ -34,7 +34,7 @@ describe("Hbar", function () {
         ];
 
         check.forEach((element) => {
-            expect(element[1]).to.equal(Hbar.fromString(element[0]).toString());
+            expect(element[1]).to.equal(U2U.fromString(element[0]).toString());
         });
     });
 
@@ -55,7 +55,7 @@ describe("Hbar", function () {
 
         check.forEach((element) => {
             try {
-                Hbar.fromString(element);
+                U2U.fromString(element);
                 throw new Error();
             } catch (error) {
                 let result = error
@@ -63,7 +63,7 @@ describe("Hbar", function () {
                     .includes("invalid argument provided");
                 if (!result) {
                     throw new Error(
-                        "Expected Hbar.fromString(" +
+                        "Expected U2U.fromString(" +
                             element +
                             ") to throw an error."
                     );
@@ -73,31 +73,31 @@ describe("Hbar", function () {
         });
     });
 
-    it("should append default unit Hbar", function () {
+    it("should append default unit U2U", function () {
         /**
-         * fromString strips + and should append the default Hbar unit when none are present
+         * fromString strips + and should append the default U2U unit when none are present
          */
-        const unit = HbarUnit.Hbar._symbol;
+        const unit = U2UUnit.U2U._symbol;
         let check = ["1", "-1", "+1", "1.151", "-1.151", "+1.151"];
 
         check.forEach((element) => {
             expect(element.replace("+", "") + " " + unit).to.equal(
-                Hbar.fromString(element).toString()
+                U2U.fromString(element).toString()
             );
         });
     });
 
-    it('should throw error "Hbar in tinybars contains decimals"', function () {
+    it('should throw error "U2U in tinybars contains decimals"', function () {
         let check = ["1.151 tℏ", "1.151 μℏ", "1.151", "-1.151", "+1.151"];
 
         check.forEach((element) => {
             try {
-                Hbar.fromString(element);
+                U2U.fromString(element);
             } catch (error) {
                 expect(
                     error
                         .toString()
-                        .includes("Hbar in tinybars contains decimals")
+                        .includes("U2U in tinybars contains decimals")
                 ).to.equal(true);
             }
         });

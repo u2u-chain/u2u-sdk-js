@@ -1,12 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@hashgraph/sdk': link:..
+  '@u2u/sdk': link:..
   chai: ^4.3.6
   mocha: ^9.2.2
 
 dependencies:
-  '@hashgraph/sdk': link:..
+  '@u2u/sdk': link:..
   chai: 4.3.7
   mocha: 9.2.2
 

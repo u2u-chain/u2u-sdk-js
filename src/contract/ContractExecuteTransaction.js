@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import Transaction, {
     TRANSACTION_REGISTRY,
 } from "../transaction/Transaction.js";
@@ -58,7 +58,7 @@ export default class ContractExecuteTransaction extends Transaction {
      * @param {object} [props]
      * @param {ContractId | string} [props.contractId]
      * @param {number | Long} [props.gas]
-     * @param {number | string | Long | BigNumber | Hbar} [props.amount]
+     * @param {number | string | Long | BigNumber | U2U} [props.amount]
      * @param {Uint8Array} [props.functionParameters]
      * @param {FunctionParameters} [props.function]
      */
@@ -79,7 +79,7 @@ export default class ContractExecuteTransaction extends Transaction {
 
         /**
          * @private
-         * @type {?Hbar}
+         * @type {?U2U}
          */
         this._amount = null;
 
@@ -143,7 +143,7 @@ export default class ContractExecuteTransaction extends Transaction {
                 gas: call.gas != null ? call.gas : undefined,
                 amount:
                     call.amount != null
-                        ? Hbar.fromTinybars(call.amount)
+                        ? U2U.fromTinyU2U(call.amount)
                         : undefined,
                 functionParameters:
                     call.functionParameters != null
@@ -202,7 +202,7 @@ export default class ContractExecuteTransaction extends Transaction {
     }
 
     /**
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get payableAmount() {
         return this._amount;
@@ -211,12 +211,12 @@ export default class ContractExecuteTransaction extends Transaction {
     /**
      * Sets the contract ID which is being executed in this transaction.
      *
-     * @param {number | string | Long | BigNumber | Hbar} amount
+     * @param {number | string | Long | BigNumber | U2U} amount
      * @returns {ContractExecuteTransaction}
      */
     setPayableAmount(amount) {
         this._requireNotFrozen();
-        this._amount = amount instanceof Hbar ? amount : new Hbar(amount);
+        this._amount = amount instanceof U2U ? amount : new U2U(amount);
 
         return this;
     }
@@ -295,7 +295,7 @@ export default class ContractExecuteTransaction extends Transaction {
                     ? this._contractId._toProtobuf()
                     : null,
             gas: this._gas,
-            amount: this._amount != null ? this._amount.toTinybars() : null,
+            amount: this._amount != null ? this._amount.toTinyU2U() : null,
             functionParameters: this._functionParameters,
         };
     }

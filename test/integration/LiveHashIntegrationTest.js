@@ -1,7 +1,7 @@
 import {
     AccountCreateTransaction,
     AccountDeleteTransaction,
-    Hbar,
+    U2U,
     LiveHashAddTransaction,
     LiveHashDeleteTransaction,
     LiveHashQuery,
@@ -34,7 +34,7 @@ describe("LiveHash", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key.publicKey)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         let receipt = await new TransactionReceiptQuery()

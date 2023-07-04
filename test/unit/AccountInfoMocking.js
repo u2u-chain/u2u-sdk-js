@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import {
-    Hbar,
+    U2U,
     MaxQueryPaymentExceeded,
     AccountInfoQuery,
     AccountId,
@@ -70,18 +70,18 @@ describe("AccountInfoMocking", function () {
                                 request.cryptoGetInfo.header.payment
                             ).finish()
                         );
-                        const hbarTransfers = transaction.hbarTransfers;
-                        expect(hbarTransfers.size).to.be.equal(2);
+                        const U2UTransfers = transaction.U2UTransfers;
+                        expect(U2UTransfers.size).to.be.equal(2);
                         expect(
-                            hbarTransfers
+                            U2UTransfers
                                 .get(client.operatorAccountId)
-                                .toTinybars()
+                                .toTinyU2U()
                                 .toInt()
                         ).to.be.lt(0);
                         expect(
-                            hbarTransfers
+                            U2UTransfers
                                 .get(Object.values(client.network)[0])
-                                .toTinybars()
+                                .toTinyU2U()
                                 .toInt()
                         ).to.be.gt(0);
                         return ACCOUNT_INFO_QUERY_RESPONSE;
@@ -125,7 +125,7 @@ describe("AccountInfoMocking", function () {
             ],
         ]));
 
-        client.setMaxQueryPayment(Hbar.fromTinybars(10));
+        client.setMaxQueryPayment(U2U.fromTinyU2U(10));
 
         let err = false;
 
@@ -149,11 +149,11 @@ describe("AccountInfoMocking", function () {
 
         const query = new AccountInfoQuery()
             .setAccountId("0.0.3")
-            .setQueryPayment(Hbar.fromTinybars(10));
+            .setQueryPayment(U2U.fromTinyU2U(10));
 
         await query.execute(client, 1);
 
-        expect(query._queryPayment.toTinybars().toInt()).to.be.equal(10);
+        expect(query._queryPayment.toTinyU2U().toInt()).to.be.equal(10);
     });
 
     it("setQueryPayemnt() + setMaxQueryPayment() avoids querying actual cost", async function () {
@@ -165,12 +165,12 @@ describe("AccountInfoMocking", function () {
 
         const query = new AccountInfoQuery()
             .setAccountId("0.0.3")
-            .setMaxQueryPayment(Hbar.fromTinybars(1))
-            .setQueryPayment(Hbar.fromTinybars(10));
+            .setMaxQueryPayment(U2U.fromTinyU2U(1))
+            .setQueryPayment(U2U.fromTinyU2U(10));
 
         await query.execute(client, 1);
 
-        expect(query._queryPayment.toTinybars().toInt()).to.be.equal(10);
+        expect(query._queryPayment.toTinyU2U().toInt()).to.be.equal(10);
     });
 
     it("actual cost is compared to Client.maxQueryPayment if Query.setMaxQueryPayment is not used", async function () {
@@ -183,7 +183,7 @@ describe("AccountInfoMocking", function () {
             ],
         ]));
 
-        client.setMaxQueryPayment(Hbar.fromTinybars(24));
+        client.setMaxQueryPayment(U2U.fromTinyU2U(24));
 
         let err = false;
 
@@ -211,7 +211,7 @@ describe("AccountInfoMocking", function () {
         let err = false;
 
         const query = new AccountInfoQuery()
-            .setMaxQueryPayment(Hbar.fromTinybars(24))
+            .setMaxQueryPayment(U2U.fromTinyU2U(24))
             .setAccountId("0.0.3");
 
         try {
@@ -238,7 +238,7 @@ describe("AccountInfoMocking", function () {
         try {
             await new AccountInfoQuery()
                 .setAccountId("0.0.3")
-                .setMaxQueryPayment(Hbar.fromTinybars(28))
+                .setMaxQueryPayment(U2U.fromTinyU2U(28))
                 .execute(client, 1);
         } catch (error) {
             err = error instanceof MaxQueryPaymentExceeded;

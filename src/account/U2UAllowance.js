@@ -19,7 +19,7 @@
  */
 
 import AccountId from "./AccountId.js";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 
 /**
  * @namespace proto
@@ -36,13 +36,13 @@ import Hbar from "../Hbar.js";
  * @typedef {import("../client/Client.js").default<*, *>} Client
  */
 
-export default class HbarAllowance {
+export default class U2UAllowance {
     /**
      * @internal
      * @param {object} props
      * @param {AccountId | null} props.spenderAccountId
      * @param {AccountId | null} props.ownerAccountId
-     * @param {Hbar | null} props.amount
+     * @param {U2U | null} props.amount
      */
     constructor(props) {
         /**
@@ -72,10 +72,10 @@ export default class HbarAllowance {
     /**
      * @internal
      * @param {HashgraphProto.proto.ICryptoAllowance} allowance
-     * @returns {HbarAllowance}
+     * @returns {U2UAllowance}
      */
     static _fromProtobuf(allowance) {
-        return new HbarAllowance({
+        return new U2UAllowance({
             spenderAccountId: AccountId._fromProtobuf(
                 /** @type {HashgraphProto.proto.IAccountID} */ (
                     allowance.spender
@@ -84,12 +84,12 @@ export default class HbarAllowance {
             ownerAccountId:
                 allowance.owner != null
                     ? AccountId._fromProtobuf(
-                          /**@type {HashgraphProto.proto.IAccountID}*/ (
-                              allowance.owner
-                          )
-                      )
+                        /**@type {HashgraphProto.proto.IAccountID}*/ (
+                            allowance.owner
+                        )
+                    )
                     : null,
-            amount: Hbar.fromTinybars(
+            amount: U2U.fromTinyU2U(
                 allowance.amount != null ? allowance.amount : 0
             ),
         });
@@ -99,17 +99,17 @@ export default class HbarAllowance {
      * @internal
      * @param {HashgraphProto.proto.IGrantedCryptoAllowance} allowance
      * @param {AccountId} ownerAccountId
-     * @returns {HbarAllowance}
+     * @returns {U2UAllowance}
      */
     static _fromGrantedProtobuf(allowance, ownerAccountId) {
-        return new HbarAllowance({
+        return new U2UAllowance({
             spenderAccountId: AccountId._fromProtobuf(
                 /** @type {HashgraphProto.proto.IAccountID} */ (
                     allowance.spender
                 )
             ),
             ownerAccountId,
-            amount: Hbar.fromTinybars(
+            amount: U2U.fromTinyU2U(
                 allowance.amount != null ? allowance.amount : 0
             ),
         });
@@ -129,7 +129,7 @@ export default class HbarAllowance {
                 this.spenderAccountId != null
                     ? this.spenderAccountId._toProtobuf()
                     : null,
-            amount: this.amount != null ? this.amount.toTinybars() : null,
+            amount: this.amount != null ? this.amount.toTinyU2U() : null,
         };
     }
 

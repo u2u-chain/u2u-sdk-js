@@ -2,7 +2,7 @@ import {
     AccountCreateTransaction,
     AccountInfoQuery,
     AccountUpdateTransaction,
-    Hbar,
+    U2U,
     PrivateKey,
     Status,
     TokenAssociateTransaction,
@@ -32,7 +32,7 @@ describe("TokenTransfer", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -103,7 +103,7 @@ describe("TokenTransfer", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -176,7 +176,7 @@ describe("TokenTransfer", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -330,7 +330,7 @@ describe("TokenTransfer", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .setMaxAutomaticTokenAssociations(10)
             .execute(env.client);
 

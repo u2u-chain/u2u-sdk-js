@@ -1,7 +1,7 @@
 import {
     AccountBalanceQuery,
     AccountInfoQuery,
-    Hbar,
+    U2U,
     Status,
 } from "../../src/exports.js";
 import IntegrationTestEnv from "./client/NodeIntegrationTestEnv.js";
@@ -32,7 +32,7 @@ describe("GetCost", function () {
 
         const operatorId = env.operatorId;
 
-        env.client.setMaxQueryPayment(new Hbar(100));
+        env.client.setMaxQueryPayment(new U2U(100));
 
         const cost = await new AccountInfoQuery()
             .setAccountId(operatorId)
@@ -49,7 +49,7 @@ describe("GetCost", function () {
 
         const operatorId = env.operatorId;
 
-        env.client.setMaxQueryPayment(new Hbar(1));
+        env.client.setMaxQueryPayment(new U2U(1));
 
         const cost = await new AccountInfoQuery()
             .setAccountId(operatorId)
@@ -68,12 +68,12 @@ describe("GetCost", function () {
 
         await new AccountInfoQuery()
             .setAccountId(operatorId)
-            .setQueryPayment(new Hbar(1))
+            .setQueryPayment(new U2U(1))
             .execute(env.client);
 
         await new AccountBalanceQuery()
             .setAccountId(operatorId)
-            .setQueryPayment(new Hbar(0))
+            .setQueryPayment(new U2U(0))
             .execute(env.client);
     });
 
@@ -84,12 +84,12 @@ describe("GetCost", function () {
 
         await new AccountInfoQuery()
             .setAccountId(operatorId)
-            .setQueryPayment(new Hbar(10))
+            .setQueryPayment(new U2U(10))
             .execute(env.client);
 
         await new AccountBalanceQuery()
             .setAccountId(operatorId)
-            .setQueryPayment(new Hbar(0))
+            .setQueryPayment(new U2U(0))
             .execute(env.client);
     });
 
@@ -102,7 +102,7 @@ describe("GetCost", function () {
         try {
             await new AccountInfoQuery()
                 .setAccountId(operatorId)
-                .setQueryPayment(new Hbar(0))
+                .setQueryPayment(new U2U(0))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.InsufficientTxFee);

@@ -19,13 +19,13 @@
  */
 
 /**
- * @typedef {import("./Hbar.js").default} Hbar
+ * @typedef {import("./U2U.js").default} U2U
  */
 
 export default class MaxQueryPaymentExceeded extends Error {
     /**
-     * @param {Hbar} queryCost
-     * @param {Hbar} maxQueryPayment
+     * @param {U2U} queryCost
+     * @param {U2U} maxQueryPayment
      */
     constructor(queryCost, maxQueryPayment) {
         super();

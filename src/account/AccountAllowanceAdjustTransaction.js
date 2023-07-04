@@ -24,8 +24,8 @@ import ContractId from "../contract/ContractId.js";
 import TokenId from "../token/TokenId.js";
 import NftId from "../token/NftId.js";
 import Long from "long";
-import Hbar from "../Hbar.js";
-import HbarAllowance from "./HbarAllowance.js";
+import U2U from "../U2U.js";
+import U2UAllowance from "./U2UAllowance.js";
 import TokenAllowance from "./TokenAllowance.js";
 import TokenNftAllowance from "./TokenNftAllowance.js";
 import * as util from "../util.js";
@@ -56,7 +56,7 @@ import * as util from "../util.js";
 export default class AccountAllowanceAdjustTransaction extends Transaction {
     /**
      * @param {object} [props]
-     * @param {HbarAllowance[]} [props.hbarAllowances]
+     * @param {U2UAllowance[]} [props.U2UAllowances]
      * @param {TokenAllowance[]} [props.tokenAllowances]
      * @param {TokenNftAllowance[]} [props.nftAllowances]
      */
@@ -65,10 +65,10 @@ export default class AccountAllowanceAdjustTransaction extends Transaction {
 
         /**
          * @private
-         * @type {HbarAllowance[]}
+         * @type {U2UAllowance[]}
          */
-        this._hbarAllowances =
-            props.hbarAllowances != null ? props.hbarAllowances : [];
+        this._U2UAllowances =
+            props.U2UAllowances != null ? props.U2UAllowances : [];
 
         /**
          * @private
@@ -86,21 +86,21 @@ export default class AccountAllowanceAdjustTransaction extends Transaction {
     }
 
     /**
-     * @returns {HbarAllowance[]}
+     * @returns {U2UAllowance[]}
      */
-    get hbarAllowances() {
-        return this._hbarAllowances;
+    get U2UAllowances() {
+        return this._U2UAllowances;
     }
 
     /**
      * @deprecated
      * @param {AccountId | string} spenderAccountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {AccountAllowanceAdjustTransaction}
      */
-    addHbarAllowance(spenderAccountId, amount) {
-        const value = amount instanceof Hbar ? amount : new Hbar(amount);
-        return this._adjustHbarAllowance(
+    addU2UAllowance(spenderAccountId, amount) {
+        const value = amount instanceof U2U ? amount : new U2U(amount);
+        return this._adjustU2UAllowance(
             null,
             spenderAccountId,
             util.requireNotNegative(value)
@@ -110,14 +110,14 @@ export default class AccountAllowanceAdjustTransaction extends Transaction {
     /**
      * @param {AccountId | string | null} ownerAccountId
      * @param {AccountId | ContractId | string} spenderAccountId
-     * @param {Hbar} amount
+     * @param {U2U} amount
      * @returns {AccountAllowanceAdjustTransaction}
      */
-    _adjustHbarAllowance(ownerAccountId, spenderAccountId, amount) {
+    _adjustU2UAllowance(ownerAccountId, spenderAccountId, amount) {
         this._requireNotFrozen();
 
-        this._hbarAllowances.push(
-            new HbarAllowance({
+        this._U2UAllowances.push(
+            new U2UAllowance({
                 spenderAccountId:
                     typeof spenderAccountId === "string"
                         ? AccountId.fromString(spenderAccountId)
@@ -145,12 +145,12 @@ export default class AccountAllowanceAdjustTransaction extends Transaction {
      * @deprecated
      * @param {AccountId | string} ownerAccountId
      * @param {AccountId | string} spenderAccountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {AccountAllowanceAdjustTransaction}
      */
-    grantHbarAllowance(ownerAccountId, spenderAccountId, amount) {
-        const value = amount instanceof Hbar ? amount : new Hbar(amount);
-        return this._adjustHbarAllowance(
+    grantU2UAllowance(ownerAccountId, spenderAccountId, amount) {
+        const value = amount instanceof U2U ? amount : new U2U(amount);
+        return this._adjustU2UAllowance(
             ownerAccountId,
             spenderAccountId,
             util.requireNotNegative(value)
@@ -161,12 +161,12 @@ export default class AccountAllowanceAdjustTransaction extends Transaction {
      * @deprecated
      * @param {AccountId | string} ownerAccountId
      * @param {AccountId | string} spenderAccountId
-     * @param {number | string | Long | LongObject | BigNumber | Hbar} amount
+     * @param {number | string | Long | LongObject | BigNumber | U2U} amount
      * @returns {AccountAllowanceAdjustTransaction}
      */
-    revokeHbarAllowance(ownerAccountId, spenderAccountId, amount) {
-        const value = amount instanceof Hbar ? amount : new Hbar(amount);
-        return this._adjustHbarAllowance(
+    revokeU2UAllowance(ownerAccountId, spenderAccountId, amount) {
+        const value = amount instanceof U2U ? amount : new U2U(amount);
+        return this._adjustU2UAllowance(
             ownerAccountId,
             spenderAccountId,
             util.requireNotNegative(value).negated()
@@ -484,7 +484,7 @@ export default class AccountAllowanceAdjustTransaction extends Transaction {
      * @param {Client} client
      */
     _validateChecksums(client) {
-        this._hbarAllowances.map((allowance) =>
+        this._U2UAllowances.map((allowance) =>
             allowance._validateChecksums(client)
         );
         this._tokenAllowances.map((allowance) =>

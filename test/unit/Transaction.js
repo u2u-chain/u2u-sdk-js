@@ -2,7 +2,7 @@ import {
     AccountCreateTransaction,
     AccountId,
     FileCreateTransaction,
-    Hbar,
+    U2U,
     PrivateKey,
     Timestamp,
     Transaction,
@@ -66,17 +66,17 @@ describe("Transaction", function () {
         const transaction = Transaction.fromBytes(hex.decode(hexBytes));
 
         expect(
-            transaction.hbarTransfers
+            transaction.U2UTransfers
                 .get(new AccountId(476260))
-                .toTinybars()
+                .toTinyU2U()
                 .toString()
-        ).to.be.equal(new Hbar(1).negated().toTinybars().toString());
+        ).to.be.equal(new U2U(1).negated().toTinyU2U().toString());
         expect(
-            transaction.hbarTransfers
+            transaction.U2UTransfers
                 .get(new AccountId(476267))
-                .toTinybars()
+                .toTinyU2U()
                 .toString()
-        ).to.be.equal(new Hbar(1).toTinybars().toString());
+        ).to.be.equal(new U2U(1).toTinyU2U().toString());
     });
 
     it("sign", async function () {
@@ -111,7 +111,7 @@ describe("Transaction", function () {
         const nodeAccountId = new AccountId(3);
         const client = Client.forTestnet({
             scheduleNetworkUpdate: false,
-        }).setMaxTransactionFee(Hbar.fromTinybars(1));
+        }).setMaxTransactionFee(U2U.fromTinyU2U(1));
 
         const transaction = new FileCreateTransaction()
             .setNodeAccountIds([nodeAccountId])
@@ -119,7 +119,7 @@ describe("Transaction", function () {
             .setContents("Hello world")
             .freezeWith(client);
 
-        expect(transaction.maxTransactionFee.toTinybars().toInt()).to.be.equal(
+        expect(transaction.maxTransactionFee.toTinyU2U().toInt()).to.be.equal(
             1
         );
     });

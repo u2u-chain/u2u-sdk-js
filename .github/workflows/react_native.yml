@@ -51,7 +51,7 @@ jobs:
 
             - run: npm install -g yarn
 
-            - name: Build @hashgraph/sdk
+            - name: Build @u2u/sdk
               run: task build
 
             - name: Install detox
@@ -68,7 +68,7 @@ jobs:
             - name: Build
               working-directory: examples/react-native-example
               run: |
-                  ../../node_modules/.bin/yalc add "@hashgraph/sdk"
+                  ../../node_modules/.bin/yalc add "@u2u/sdk"
                   yarn
                   detox build --configuration android
 
@@ -113,7 +113,7 @@ jobs:
 
             - run: npm install -g yarn
 
-            - name: Build @hashgraph/sdk
+            - name: Build @u2u/sdk
               run: task build
 
             - name: Install detox
@@ -124,7 +124,7 @@ jobs:
               run: |
                   brew tap wix/brew
                   brew install applesimutils
-                  yalc add "@hashgraph/sdk"
+                  yalc add "@u2u/sdk"
                   yarn
                   detox build --configuration ios
 

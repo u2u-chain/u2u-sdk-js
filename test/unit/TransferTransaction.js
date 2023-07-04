@@ -2,8 +2,8 @@ import { expect } from "chai";
 
 import {
     TransferTransaction,
-    HbarUnit,
-    Hbar,
+    U2UUnit,
+    U2U,
     TokenId,
     AccountId,
     Transaction,
@@ -29,15 +29,15 @@ describe("TransferTransaction", function () {
         const accountId = "0.0.0";
 
         const transfer = new TransferTransaction()
-            .addHbarTransfer(accountId, 1)
-            .addHbarTransfer(accountId, 1);
+            .addU2UTransfer(accountId, 1)
+            .addU2UTransfer(accountId, 1);
 
-        transfer.addHbarTransfer(accountId, 1);
-        transfer.addHbarTransfer("0.0.1", 1);
+        transfer.addU2UTransfer(accountId, 1);
+        transfer.addU2UTransfer("0.0.1", 1);
 
         expect(
-            transfer.hbarTransfers.get(accountId).to(HbarUnit.Hbar).toNumber()
-        ).to.be.equal(new Hbar(expectedHbar).to(HbarUnit.Hbar).toNumber());
+            transfer.U2UTransfers.get(accountId).to(U2UUnit.U2U).toNumber()
+        ).to.be.equal(new U2U(expectedHbar).to(U2UUnit.U2U).toNumber());
     });
 
     it("should use nftid case for addNftTransfer", function () {
@@ -186,9 +186,9 @@ describe("TransferTransaction", function () {
             .addTokenTransferWithDecimals(tokenId2, accountId3, 2, 10)
             .addTokenTransferWithDecimals(tokenId1, accountId2, -3, 11)
             .addTokenTransferWithDecimals(tokenId1, accountId1, -4, 11)
-            .addHbarTransfer(accountId2, -1)
-            .addHbarTransfer(accountId1, 1)
-            .setHbarTransferApproval(accountId1, true)
+            .addU2UTransfer(accountId2, -1)
+            .addU2UTransfer(accountId1, 1)
+            .setU2UTransferApproval(accountId1, true)
             .setTokenTransferApproval(tokenId1, accountId1, true)
             .setNftTransferApproval(new NftId(tokenId4, serialNum1), true)
             .setTransactionId(new TransactionId(accountId3, timestamp1))

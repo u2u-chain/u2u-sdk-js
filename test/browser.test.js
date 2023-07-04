@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("can execute @hashgraph/sdk within browser", async function ({ page }) {
+test("can execute @u2u/sdk within browser", async function ({ page }) {
     page.on("pageerror", async (message) => {
         throw new Error(message);
     });

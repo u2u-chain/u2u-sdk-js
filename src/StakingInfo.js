@@ -19,7 +19,7 @@
  */
 
 import AccountId from "./account/AccountId.js";
-import Hbar from "./Hbar.js";
+import U2U from "./U2U.js";
 import Timestamp from "./Timestamp.js";
 import * as HashgraphProto from "@hashgraph/proto";
 
@@ -46,8 +46,8 @@ export default class StakingInfo {
      * @param {object} props
      * @param {boolean} props.declineStakingReward
      * @param {?Timestamp} props.stakePeriodStart
-     * @param {?Hbar} props.pendingReward
-     * @param {?Hbar} props.stakedToMe
+     * @param {?U2U} props.pendingReward
+     * @param {?U2U} props.stakedToMe
      * @param {?AccountId} props.stakedAccountId
      * @param {?Long} props.stakedNodeId
      */
@@ -109,18 +109,18 @@ export default class StakingInfo {
      */
     static _fromProtobuf(info) {
         return new StakingInfo({
-            declineStakingReward: info.declineReward == true,
+            declineStakingReward: info.declineReward === true,
             stakePeriodStart:
                 info.stakePeriodStart != null
                     ? Timestamp._fromProtobuf(info.stakePeriodStart)
                     : null,
             pendingReward:
                 info.pendingReward != null
-                    ? Hbar.fromTinybars(info.pendingReward)
+                    ? U2U.fromTinyU2U(info.pendingReward)
                     : null,
             stakedToMe:
                 info.stakedToMe != null
-                    ? Hbar.fromTinybars(info.stakedToMe)
+                    ? U2U.fromTinyU2U(info.stakedToMe)
                     : null,
             stakedAccountId:
                 info.stakedAccountId != null
@@ -142,10 +142,10 @@ export default class StakingInfo {
                     : null,
             pendingReward:
                 this.pendingReward != null
-                    ? this.pendingReward.toTinybars()
+                    ? this.pendingReward.toTinyU2U()
                     : null,
             stakedToMe:
-                this.stakedToMe != null ? this.stakedToMe.toTinybars() : null,
+                this.stakedToMe != null ? this.stakedToMe.toTinyU2U() : null,
             stakedAccountId:
                 this.stakedAccountId != null
                     ? this.stakedAccountId._toProtobuf()

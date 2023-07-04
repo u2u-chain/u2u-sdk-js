@@ -37,7 +37,7 @@ import TokenNftAllowance from "./TokenNftAllowance.js";
  */
 
 /**
- * @typedef {import("./HbarAllowance.js").default} HbarAllowance
+ * @typedef {import("./U2UAllowance.js").default} U2UAllowance
  * @typedef {import("./TokenAllowance.js").default} TokenAllowance
  * @typedef {import("../channel/Channel.js").default} Channel
  * @typedef {import("../client/Client.js").default<*, *>} Client
@@ -52,7 +52,7 @@ import TokenNftAllowance from "./TokenNftAllowance.js";
 export default class AccountAllowanceDeleteTransaction extends Transaction {
     /**
      * @param {object} [props]
-     * @param {HbarAllowance[]} [props.hbarAllowances]
+     * @param {U2UAllowance[]} [props.U2UAllowances]
      * @param {TokenAllowance[]} [props.tokenAllowances]
      * @param {TokenNftAllowance[]} [props.nftAllowances]
      */

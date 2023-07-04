@@ -1,7 +1,7 @@
 import {
     AccountCreateTransaction,
     AccountDeleteTransaction,
-    Hbar,
+    U2U,
     PrivateKey,
     Status,
     TransactionId,
@@ -23,7 +23,7 @@ describe("CryptoTransfer", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -33,8 +33,8 @@ describe("CryptoTransfer", function () {
 
         await (
             await new TransferTransaction()
-                .addHbarTransfer(account, new Hbar(1))
-                .addHbarTransfer(operatorId, new Hbar(-1))
+                .addU2UTransfer(account, new U2U(1))
+                .addU2UTransfer(operatorId, new U2U(-1))
                 .execute(env.client)
         ).getReceipt(env.client);
 
@@ -58,7 +58,7 @@ describe("CryptoTransfer", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key)
-            .setInitialBalance(new Hbar(0))
+            .setInitialBalance(new U2U(0))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -71,8 +71,8 @@ describe("CryptoTransfer", function () {
         try {
             await (
                 await new TransferTransaction()
-                    .addHbarTransfer(account, new Hbar(1))
-                    .addHbarTransfer(operatorId, new Hbar(1))
+                    .addU2UTransfer(account, new U2U(1))
+                    .addU2UTransfer(operatorId, new U2U(1))
                     .execute(env.client)
             ).getReceipt(env.client);
         } catch (error) {

@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "./Hbar.js";
+import U2U from "./U2U.js";
 import FileId from "./file/FileId.js";
 import Transaction, {
     TRANSACTION_REGISTRY,
@@ -54,7 +54,7 @@ export default class EthereumTransaction extends Transaction {
      * @param {Uint8Array} [props.ethereumData]
      * @param {FileId} [props.callData]
      * @param {FileId} [props.callDataFileId]
-     * @param {number | string | Long | BigNumber | Hbar} [props.maxGasAllowance]
+     * @param {number | string | Long | BigNumber | U2U} [props.maxGasAllowance]
      */
     constructor(props = {}) {
         super();
@@ -73,7 +73,7 @@ export default class EthereumTransaction extends Transaction {
 
         /**
          * @private
-         * @type {?Hbar}
+         * @type {?U2U}
          */
         this._maxGasAllowance = null;
 
@@ -90,7 +90,7 @@ export default class EthereumTransaction extends Transaction {
         }
 
         if (props.maxGasAllowance != null) {
-            this.setMaxGasAllowanceHbar(props.maxGasAllowance);
+            this.setMaxGasAllowanceU2U(props.maxGasAllowance);
         }
     }
 
@@ -128,7 +128,7 @@ export default class EthereumTransaction extends Transaction {
                         : undefined,
                 maxGasAllowance:
                     transaction.maxGasAllowance != null
-                        ? Hbar.fromTinybars(transaction.maxGasAllowance)
+                        ? U2U.fromTinyU2U(transaction.maxGasAllowance)
                         : undefined,
             }),
             transactions,
@@ -206,19 +206,19 @@ export default class EthereumTransaction extends Transaction {
     }
 
     /**
-     * @returns {?Hbar}
+     * @returns {?U2U}
      */
     get maxGasAllowance() {
         return this._maxGasAllowance;
     }
 
     /**
-     * @deprecated -- use setMaxGasAllowanceHbar instead
-     * @param {number | string | Long | BigNumber | Hbar} maxGasAllowance
+     * @deprecated -- use setMaxGasAllowanceU2U instead
+     * @param {number | string | Long | BigNumber | U2U} maxGasAllowance
      * @returns {this}
      */
     setMaxGasAllowance(maxGasAllowance) {
-        return this.setMaxGasAllowanceHbar(maxGasAllowance);
+        return this.setMaxGasAllowanceU2U(maxGasAllowance);
     }
 
     /**
@@ -235,15 +235,15 @@ export default class EthereumTransaction extends Transaction {
      * price in the transaction was set to zero then the payer will be assessed
      * the entire fee.
      *
-     * @param {number | string | Long | BigNumber | Hbar} maxGasAllowance
+     * @param {number | string | Long | BigNumber | U2U} maxGasAllowance
      * @returns {this}
      */
-    setMaxGasAllowanceHbar(maxGasAllowance) {
+    setMaxGasAllowanceU2U(maxGasAllowance) {
         this._requireNotFrozen();
         this._maxGasAllowance =
-            maxGasAllowance instanceof Hbar
+            maxGasAllowance instanceof U2U
                 ? maxGasAllowance
-                : new Hbar(maxGasAllowance);
+                : new U2U(maxGasAllowance);
         return this;
     }
 
@@ -293,7 +293,7 @@ export default class EthereumTransaction extends Transaction {
                     : null,
             maxGasAllowance:
                 this._maxGasAllowance != null
-                    ? this._maxGasAllowance.toTinybars()
+                    ? this._maxGasAllowance.toTinyU2U()
                     : null,
         };
     }

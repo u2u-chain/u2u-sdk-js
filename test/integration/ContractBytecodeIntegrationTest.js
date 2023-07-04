@@ -5,7 +5,7 @@ import {
     ContractFunctionParameters,
     FileCreateTransaction,
     FileDeleteTransaction,
-    Hbar,
+    U2U,
     Status,
     TransactionReceiptQuery,
 } from "../../src/exports.js";
@@ -62,7 +62,7 @@ describe("ContractBytecode", function () {
 
         const bytecode = await new ContractByteCodeQuery()
             .setContractId(contract)
-            .setQueryPayment(new Hbar(2))
+            .setQueryPayment(new U2U(2))
             .execute(env.client);
 
         expect(bytecode.length).to.be.equal(798);

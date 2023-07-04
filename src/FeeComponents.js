@@ -31,7 +31,7 @@ export default class FeeComponents {
      * @param {Long} [props.transactionRamByteHour]
      * @param {Long} [props.transactionStorageByteHour]
      * @param {Long} [props.contractTransactionGas]
-     * @param {Long} [props.transferVolumeHbar]
+     * @param {Long} [props.transferVolumeU2U]
      * @param {Long} [props.responseMemoryByte]
      * @param {Long} [props.responseDiskByte]
      */
@@ -97,7 +97,7 @@ export default class FeeComponents {
          *
          * @type {Long}
          */
-        this.transferVolumeHbar = props.transferVolumeHbar;
+        this.transferVolumeU2U = props.transferVolumeU2U;
 
         /*
          * The price of bandwidth for data retrieved from memory for a response, measured in bytes
@@ -147,7 +147,7 @@ export default class FeeComponents {
                 feeComponents.sbh != null ? feeComponents.sbh : undefined,
             contractTransactionGas:
                 feeComponents.gas != null ? feeComponents.gas : undefined,
-            transferVolumeHbar:
+            transferVolumeU2U:
                 feeComponents.tv != null ? feeComponents.tv : undefined,
             responseMemoryByte:
                 feeComponents.bpr != null ? feeComponents.bpr : undefined,
@@ -186,8 +186,8 @@ export default class FeeComponents {
                     ? this.contractTransactionGas
                     : undefined,
             tv:
-                this.transferVolumeHbar != null
-                    ? this.transferVolumeHbar
+                this.transferVolumeU2U != null
+                    ? this.transferVolumeU2U
                     : undefined,
             bpr:
                 this.responseMemoryByte != null

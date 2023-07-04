@@ -19,7 +19,7 @@
  */
 
 import AccountId from "./AccountId.js";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 
 /**
  * @namespace proto
@@ -39,7 +39,7 @@ export default class ProxyStaker {
      * @private
      * @param {object} props
      * @param {AccountId} props.accountId
-     * @param {number | string | Long | BigNumber | Hbar} props.amount
+     * @param {number | string | Long | BigNumber | U2U} props.amount
      */
     constructor(props) {
         /**
@@ -56,9 +56,9 @@ export default class ProxyStaker {
          * @readonly
          */
         this.amount =
-            props.amount instanceof Hbar
+            props.amount instanceof U2U
                 ? props.amount
-                : new Hbar(props.amount);
+                : new U2U(props.amount);
 
         Object.freeze(this);
     }
@@ -75,7 +75,7 @@ export default class ProxyStaker {
                     transfer.accountID
                 )
             ),
-            amount: Hbar.fromTinybars(
+            amount: U2U.fromTinyU2U(
                 transfer.amount != null ? transfer.amount : 0
             ),
         });
@@ -88,7 +88,7 @@ export default class ProxyStaker {
     _toProtobuf() {
         return {
             accountID: this.accountId._toProtobuf(),
-            amount: this.amount.toTinybars(),
+            amount: this.amount.toTinyU2U(),
         };
     }
 }

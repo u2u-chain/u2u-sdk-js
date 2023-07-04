@@ -1,4 +1,4 @@
-import { AccountStakersQuery, Hbar, Status } from "../../src/exports.js";
+import { AccountStakersQuery, U2U, Status } from "../../src/exports.js";
 import IntegrationTestEnv from "./client/NodeIntegrationTestEnv.js";
 
 describe("AccountStakers", function () {
@@ -18,7 +18,7 @@ describe("AccountStakers", function () {
         try {
             await new AccountStakersQuery()
                 .setAccountId(operatorId)
-                .setMaxQueryPayment(new Hbar(1))
+                .setMaxQueryPayment(new U2U(1))
                 .execute(env.client);
         } catch (error) {
             err = error.toString().includes(Status.NotSupported.toString());

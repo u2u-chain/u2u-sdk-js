@@ -19,7 +19,7 @@
  */
 
 import Long from "long";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import TokenId from "../token/TokenId.js";
 import TokenBalanceMap from "./TokenBalanceMap.js";
 import TokenDecimalMap from "./TokenDecimalMap.js";
@@ -34,7 +34,7 @@ import * as HashgraphProto from "@hashgraph/proto";
 
 /**
  * @typedef {object} AccountBalanceJson
- * @property {string} hbars
+ * @property {string} u2us
  * @property {TokenBalanceJson[]} tokens
  */
 
@@ -42,7 +42,7 @@ export default class AccountBalance {
     /**
      * @private
      * @param {object} props
-     * @param {Hbar} props.hbars
+     * @param {U2U} props.u2us
      * @param {?TokenBalanceMap} props.tokens
      * @param {?TokenDecimalMap} props.tokenDecimals
      */
@@ -52,7 +52,7 @@ export default class AccountBalance {
          *
          * @readonly
          */
-        this.hbars = props.hbars;
+        this.u2us = props.u2us;
 
         /**
          * @deprecated - Use the mirror node API https://docs.hedera.com/guides/docs/mirror-node-api/rest-api#api-v1-accounts instead
@@ -110,7 +110,7 @@ export default class AccountBalance {
         }
 
         return new AccountBalance({
-            hbars: Hbar.fromTinybars(
+            u2us: U2U.fromTinyU2U(
                 /** @type {Long} */ (accountBalance.balance)
             ),
             tokens: tokenBalances,
@@ -140,7 +140,7 @@ export default class AccountBalance {
         }
 
         return {
-            balance: this.hbars.toTinybars(),
+            balance: this.u2us.toTinyU2U(),
             tokenBalances: list,
         };
     }
@@ -180,7 +180,7 @@ export default class AccountBalance {
         }
 
         return {
-            hbars: this.hbars.toString(),
+            u2us: this.u2us.toString(),
             tokens,
         };
     }

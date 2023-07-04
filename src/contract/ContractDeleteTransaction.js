@@ -171,7 +171,7 @@ export default class ContractDeleteTransaction extends Transaction {
     }
 
     /**
-     * Sets the contract ID which will receive all remaining hbars.
+     * Sets the contract ID which will receive all remaining u2us.
      *
      * @param {ContractId | string} transferContractId
      * @returns {ContractDeleteTransaction}
@@ -194,7 +194,7 @@ export default class ContractDeleteTransaction extends Transaction {
     }
 
     /**
-     * Sets the account ID which will receive all remaining hbars.
+     * Sets the account ID which will receive all remaining u2us.
      *
      * @param {AccountId | string} transferAccountId
      * @returns {ContractDeleteTransaction}

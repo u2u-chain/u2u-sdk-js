@@ -475,15 +475,15 @@
 
 ### `Hbar`
     * Added `fromString(string): Hbar`
-    * Added `fromString(string, HbarUnit): Hbar`
-    * Added `from(number, HbarUnit): Hbar`
-    * Added `from(BigDecimal, HbarUnit): Hbar`
+    * Added `fromString(string, U2UUnit): Hbar`
+    * Added `from(number, U2UUnit): Hbar`
+    * Added `from(BigDecimal, U2UUnit): Hbar`
     * Added `value: BigDecimal`
-    * Added `toString(HbarUnit): string`
+    * Added `toString(U2UUnit): string`
     * Renamed `fromTinybar(number): Hbar` -> `fromTinybars(number): Hbar`
     * Renamed `of(number): Hbar` -> `from(number): Hbar`
     * Renamed `of(BigDecimal): Hbar` -> `from(BigDecimal): Hbar`
-    * Renamed `as(HbarUnit): Hbar` -> `to(HbarUnit): Hbar`
+    * Renamed `as(U2UUnit): Hbar` -> `to(U2UUnit): Hbar`
     * Renamed `asTinybar(): number` -> `toTinybars(): number`
     * Renamed `negate(): Hbar` -> `negated(): Hbar`
     * Removed `Hbar.MAX`

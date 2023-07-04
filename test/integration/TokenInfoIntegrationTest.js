@@ -139,7 +139,7 @@ describe("TokenInfo", function () {
             .setTokenId(tokenId)
             .getCost(env.client);
 
-        expect(cost.toTinybars().toInt()).to.be.at.least(1);
+        expect(cost.toTinyU2U().toInt()).to.be.at.least(1);
     });
 
     it("should error when token ID is not set", async function () {

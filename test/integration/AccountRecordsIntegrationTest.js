@@ -2,7 +2,7 @@ import {
     AccountCreateTransaction,
     AccountDeleteTransaction,
     AccountRecordsQuery,
-    Hbar,
+    U2U,
     PrivateKey,
     TransactionId,
     TransferTransaction,
@@ -24,7 +24,7 @@ describe("AccountRecords", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key.publicKey)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -34,14 +34,14 @@ describe("AccountRecords", function () {
 
         await (
             await new TransferTransaction()
-                .addHbarTransfer(account, new Hbar(1))
-                .addHbarTransfer(operatorId, new Hbar(1).negated())
+                .addU2UTransfer(account, new U2U(1))
+                .addU2UTransfer(operatorId, new U2U(1).negated())
                 .execute(env.client)
         ).getReceipt(env.client);
 
         const records = await new AccountRecordsQuery()
             .setAccountId(operatorId)
-            .setMaxQueryPayment(new Hbar(1))
+            .setMaxQueryPayment(new U2U(1))
             .execute(env.client);
 
         expect(records.length).to.be.gt(0);

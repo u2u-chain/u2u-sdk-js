@@ -25,7 +25,7 @@ describe("TransactionReceipt", function () {
         const tokenId = TokenId.fromString("0.0.4");
         const scheduleId = ScheduleId.fromString("0.0.5");
         const exchangeRate = new ExchangeRate({
-            hbars: 6,
+            u2us: 6,
             cents: 7,
             expirationTime: new Date(8),
         });

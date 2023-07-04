@@ -2,7 +2,7 @@ import {
     PrivateKey,
     AccountCreateTransaction,
     TokenDeleteTransaction,
-    Hbar,
+    U2U,
     AccountId,
 } from "../../../src/exports.js";
 
@@ -121,7 +121,7 @@ export default class BaseIntegrationTestEnv {
         const response = await new AccountCreateTransaction()
             .setKey(newOperatorKey)
             .setInitialBalance(
-                new Hbar(options.balance != null ? options.balance : 100)
+                new U2U(options.balance != null ? options.balance : 100)
             )
             .execute(client);
 

@@ -1,5 +1,5 @@
 {
-    "name": "@hashgraph/sdk",
+    "name": "@u2u/sdk",
     "version": "2.29.0",
     "description": "Hedera™ Hashgraph SDK",
     "types": "./lib/index.d.ts",

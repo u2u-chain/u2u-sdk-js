@@ -1,7 +1,7 @@
 import {
     AccountCreateTransaction,
     AccountAllowanceApproveTransaction,
-    Hbar,
+    U2U,
     PrivateKey,
     Status,
     TransactionId,
@@ -35,7 +35,7 @@ describe("TokenAllowances", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(spenderKey)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -45,7 +45,7 @@ describe("TokenAllowances", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(receiverKey)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -105,7 +105,7 @@ describe("TokenAllowances", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(spenderKey)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -115,7 +115,7 @@ describe("TokenAllowances", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(receiverKey)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;
@@ -191,7 +191,7 @@ describe("TokenAllowances", function () {
             await (
                 await new AccountCreateTransaction()
                     .setKey(receiverKey)
-                    .setInitialBalance(new Hbar(2))
+                    .setInitialBalance(new U2U(2))
                     .execute(env.client)
             ).getReceipt(env.client)
         ).accountId;

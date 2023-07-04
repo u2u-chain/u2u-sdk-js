@@ -1,6 +1,6 @@
 import {
     AccountCreateTransaction,
-    Hbar,
+    U2U,
     PrivateKey,
     TransferTransaction,
 } from "../../src/exports.js";
@@ -18,7 +18,7 @@ describe("WalletIntegration", function () {
         // Create account id for the signer
         let createTransaction = await new AccountCreateTransaction()
             .setKey(signerKey)
-            .setInitialBalance(new Hbar(5))
+            .setInitialBalance(new U2U(5))
             .signWithOperator(env.client);
 
         const response = await createTransaction.execute(env.client);
@@ -31,8 +31,8 @@ describe("WalletIntegration", function () {
         expect(env.operatorId).not.to.eql(signerId);
 
         let transferTx = new TransferTransaction()
-            .addHbarTransfer(signerId, new Hbar(-1))
-            .addHbarTransfer(env.operatorId, new Hbar(1));
+            .addU2UTransfer(signerId, new U2U(-1))
+            .addU2UTransfer(env.operatorId, new U2U(1));
 
         wallet.populateTransaction(transferTx);
 

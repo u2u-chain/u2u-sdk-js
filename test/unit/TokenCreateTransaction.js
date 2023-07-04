@@ -1,6 +1,6 @@
 import {
     PrivateKey,
-    Hbar,
+    U2U,
     TokenCreateTransaction,
     TransactionId,
     AccountId,
@@ -35,7 +35,7 @@ describe("TokenCreateTransaction", function () {
         const treasuryAccountId = new AccountId(11);
 
         const transaction = new TokenCreateTransaction()
-            .setMaxTransactionFee(new Hbar(30))
+            .setMaxTransactionFee(new U2U(30))
             .setTransactionId(
                 TransactionId.withValidStart(
                     new AccountId(1),
@@ -101,7 +101,7 @@ describe("TokenCreateTransaction", function () {
                     ed25519: key7.publicKey.toBytesRaw(),
                 },
             },
-            transactionFee: new Hbar(30).toTinybars(),
+            transactionFee: new U2U(30).toTinyU2U(),
             memo: "random memo",
             transactionID: {
                 accountID: {

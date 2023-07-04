@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/discord/373889138199494658)](https://discord.com/channels/373889138199494658/616725732650909710)
 [![Docs](https://img.shields.io/badge/docs-%F0%9F%93%84-blue)](https://docs.hedera.com/guides/getting-started/javascript/environment-set-up)
-[![NPM Package](https://img.shields.io/npm/v/@hashgraph/sdk.svg)](https://www.npmjs.org/package/@hashgraph/sdk)
+[![NPM Package](https://img.shields.io/npm/v/@u2u/sdk.svg)](https://www.npmjs.org/package/@u2u/sdk)
 
 > The JavaScript SDK for interacting with Hedera Hashgraph: the official distributed
 > consensus platform built using the hashgraph consensus algorithm for fast,
@@ -15,13 +15,13 @@
 
 ```
 # with NPM
-$ npm install --save @hashgraph/sdk
+$ npm install --save @u2u/sdk
 
 # with Yarn
-$ yarn add @hashgraph/sdk
+$ yarn add @u2u/sdk
 
 # with PNPM
-$ pnpm add @hashgraph/sdk
+$ pnpm add @u2u/sdk
 ```
 ## React Native Support
 

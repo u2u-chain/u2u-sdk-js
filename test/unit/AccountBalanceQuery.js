@@ -9,6 +9,6 @@ describe("AccountBalance", function () {
         const balance = await new AccountBalanceQuery()
             .setAccountId("0.0.3")
             .execute(client);
-        expect(balance.hbars.toTinybars().compare(0)).to.be.equal(1);
+        expect(balance.u2us.toTinyU2U().compare(0)).to.be.equal(1);
     });
 });

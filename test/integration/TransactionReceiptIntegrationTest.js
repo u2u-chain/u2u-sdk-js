@@ -1,7 +1,7 @@
 import {
     AccountCreateTransaction,
     AccountId,
-    Hbar,
+    U2U,
     KeyList,
     PrivateKey,
     TopicCreateTransaction,
@@ -36,7 +36,7 @@ describe("TransactionReceipt", function () {
         );
 
         const response = await new AccountCreateTransaction()
-            .setInitialBalance(new Hbar(50))
+            .setInitialBalance(new U2U(50))
             .setKey(keyList)
             .execute(env.client);
 

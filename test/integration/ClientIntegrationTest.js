@@ -3,7 +3,7 @@ import {
     AccountDeleteTransaction,
     AccountId,
     AccountInfoQuery,
-    Hbar,
+    U2U,
     LedgerId,
     PrivateKey,
     TransactionId,
@@ -72,7 +72,7 @@ describe("ClientIntegration", function () {
 
         const response = await new AccountCreateTransaction()
             .setKey(key.publicKey)
-            .setInitialBalance(new Hbar(2))
+            .setInitialBalance(new U2U(2))
             .execute(env.client);
 
         const receipt = await response.getReceipt(env.client);
@@ -87,12 +87,12 @@ describe("ClientIntegration", function () {
         expect(info.accountId.toString()).to.be.equal(account.toString());
         expect(info.isDeleted).to.be.false;
         expect(info.key.toString()).to.be.equal(key.publicKey.toString());
-        expect(info.balance.toTinybars().toNumber()).to.be.equal(
-            new Hbar(2).toTinybars().toNumber()
+        expect(info.balance.toTinyU2U().toNumber()).to.be.equal(
+            new U2U(2).toTinyU2U().toNumber()
         );
         expect(info.autoRenewPeriod.seconds.toNumber()).to.be.equal(7776000);
         expect(info.proxyAccountId).to.be.null;
-        expect(info.proxyReceived.toTinybars().toNumber()).to.be.equal(0);
+        expect(info.proxyReceived.toTinyU2U().toNumber()).to.be.equal(0);
 
         await (
             await (
@@ -114,7 +114,7 @@ describe("ClientIntegration", function () {
         const bytes = (
             await new AccountCreateTransaction()
                 .setKey(key.publicKey)
-                .setInitialBalance(new Hbar(2))
+                .setInitialBalance(new U2U(2))
                 .freezeWith(env.client)
                 .sign(key)
         ).toBytes();

@@ -18,7 +18,7 @@
  * ‍
  */
 
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import TokenId from "./TokenId.js";
 import AccountId from "../account/AccountId.js";
 import Transaction, {
@@ -66,7 +66,7 @@ export default class TokenDissociateTransaction extends Transaction {
          */
         this._accountId = null;
 
-        this._defaultMaxTransactionFee = new Hbar(5);
+        this._defaultMaxTransactionFee = new U2U(5);
 
         if (props.tokenIds != null) {
             this.setTokenIds(props.tokenIds);

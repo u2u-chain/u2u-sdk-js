@@ -20,14 +20,14 @@
 
 import BigNumber from "bignumber.js";
 
-export default class HbarUnit {
+export default class U2UUnit {
     /**
      * @internal
      * @param {string} name
      * @param {string} symbol
-     * @param {BigNumber} tinybar
+     * @param {BigNumber} tinyu2u
      */
-    constructor(name, symbol, tinybar) {
+    constructor(name, symbol, tinyu2u) {
         /**
          * @internal
          * @readonly
@@ -44,59 +44,59 @@ export default class HbarUnit {
          * @internal
          * @readonly
          */
-        this._tinybar = tinybar;
+        this._tinybar = tinyu2u;
 
         Object.freeze(this);
     }
 
     /**
      * @param {string} unit
-     * @returns {HbarUnit}
+     * @returns {U2UUnit}
      */
     static fromString(unit) {
         switch (unit) {
-            case HbarUnit.Hbar._symbol:
-                return HbarUnit.Hbar;
-            case HbarUnit.Tinybar._symbol:
-                return HbarUnit.Tinybar;
-            case HbarUnit.Microbar._symbol:
-                return HbarUnit.Microbar;
-            case HbarUnit.Millibar._symbol:
-                return HbarUnit.Millibar;
-            case HbarUnit.Kilobar._symbol:
-                return HbarUnit.Kilobar;
-            case HbarUnit.Megabar._symbol:
-                return HbarUnit.Megabar;
-            case HbarUnit.Gigabar._symbol:
-                return HbarUnit.Gigabar;
+            case U2UUnit.U2U._symbol:
+                return U2UUnit.U2U;
+            case U2UUnit.TinyU2U._symbol:
+                return U2UUnit.TinyU2U;
+            case U2UUnit.MicroU2U._symbol:
+                return U2UUnit.MicroU2U;
+            case U2UUnit.MilliU2U._symbol:
+                return U2UUnit.MilliU2U;
+            case U2UUnit.KiloU2U._symbol:
+                return U2UUnit.KiloU2U;
+            case U2UUnit.MegaU2U._symbol:
+                return U2UUnit.MegaU2U;
+            case U2UUnit.GigaU2U._symbol:
+                return U2UUnit.GigaU2U;
             default:
                 throw new Error("Unknown unit.");
         }
     }
 }
 
-HbarUnit.Tinybar = new HbarUnit("tinybar", "tℏ", new BigNumber(1));
+U2UUnit.TinyU2U = new U2UUnit("tinyu2u", "tu2u", new BigNumber(1));
 
-HbarUnit.Microbar = new HbarUnit("microbar", "μℏ", new BigNumber(100));
+U2UUnit.MicroU2U = new U2UUnit("microu2u", "μu2u", new BigNumber(100));
 
-HbarUnit.Millibar = new HbarUnit("millibar", "mℏ", new BigNumber(100000));
+U2UUnit.MilliU2U = new U2UUnit("milliu2u", "mu2u", new BigNumber(100000));
 
-HbarUnit.Hbar = new HbarUnit("hbar", "ℏ", new BigNumber("100000000"));
+U2UUnit.U2U = new U2UUnit("u2u", "u2u", new BigNumber("100000000"));
 
-HbarUnit.Kilobar = new HbarUnit(
-    "kilobar",
-    "kℏ",
+U2UUnit.KiloU2U = new U2UUnit(
+    "kilou2u",
+    "ku2u",
     new BigNumber(1000).multipliedBy(new BigNumber("100000000"))
 );
 
-HbarUnit.Megabar = new HbarUnit(
-    "megabar",
-    "Mℏ",
+U2UUnit.MegaU2U = new U2UUnit(
+    "megau2u",
+    "Mu2u",
     new BigNumber(1000000).multipliedBy(new BigNumber("100000000"))
 );
 
-HbarUnit.Gigabar = new HbarUnit(
-    "gigabar",
-    "Gℏ",
+U2UUnit.GigaU2U = new U2UUnit(
+    "gigau2u",
+    "Gu2u",
     new BigNumber("1000000000").multipliedBy(new BigNumber("100000000"))
 );

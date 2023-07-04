@@ -19,7 +19,7 @@
  */
 
 import AccountId from "./AccountId.js";
-import Hbar from "../Hbar.js";
+import U2U from "../U2U.js";
 import ObjectMap from "../ObjectMap.js";
 
 /**
@@ -34,19 +34,19 @@ import ObjectMap from "../ObjectMap.js";
  */
 
 /**
- * @augments {ObjectMap<AccountId, Hbar>}
+ * @augments {ObjectMap<AccountId, U2U>}
  */
-export default class HbarTransferMap extends ObjectMap {
+export default class U2UTransferMap extends ObjectMap {
     constructor() {
         super((s) => AccountId.fromString(s));
     }
 
     /**
      * @param {HashgraphProto.proto.ITransferList} transfers
-     * @returns {HbarTransferMap}
+     * @returns {U2UTransferMap}
      */
     static _fromProtobuf(transfers) {
-        const accountTransfers = new HbarTransferMap();
+        const accountTransfers = new U2UTransferMap();
 
         for (const transfer of transfers.accountAmounts != null
             ? transfers.accountAmounts
@@ -59,7 +59,7 @@ export default class HbarTransferMap extends ObjectMap {
 
             accountTransfers._set(
                 account,
-                Hbar.fromTinybars(/** @type {Long} */ (transfer.amount))
+                U2U.fromTinyU2U(/** @type {Long} */ (transfer.amount))
             );
         }
 

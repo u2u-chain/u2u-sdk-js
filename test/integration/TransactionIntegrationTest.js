@@ -3,7 +3,7 @@ import {
     AccountDeleteTransaction,
     AccountId,
     FileCreateTransaction,
-    Hbar,
+    U2U,
     PrivateKey,
     TokenCreateTransaction,
     TransferTransaction,
@@ -118,11 +118,11 @@ describe("TransactionIntegration", function () {
 
         const transaction = new TransferTransaction()
             .setNodeAccountIds([nodeAccountId])
-            .addHbarTransfer(
+            .addU2UTransfer(
                 env.client.operatorAccountId,
-                new Hbar(1).negated()
+                new U2U(1).negated()
             )
-            .addHbarTransfer(new AccountId(3), new Hbar(1))
+            .addU2UTransfer(new AccountId(3), new U2U(1))
             .freezeWith(env.client);
 
         const signature1 = privateKey1.signTransaction(transaction);
