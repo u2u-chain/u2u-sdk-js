@@ -42,7 +42,7 @@
     "bugs": "https://github.com/hashgraph/hedera-sdk-js/issues",
     "type": "module",
     "keywords": [
-        "hedera",
+        "u2u",
         "hashgraph",
         "sdk",
         "cryptography"
