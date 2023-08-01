@@ -45,7 +45,7 @@
         "@babel/plugin-transform-modules-commonjs": "^7.20.11",
         "@types/long": "^4.0.2",
         "@typescript-eslint/eslint-plugin": "^5.48.2",
-        "@typescript-eslint/parser": "^5.48.2",
+        "@typescript-eslint/parser": "^5.62.0",
         "babel-plugin-dynamic-import-node": "^2.3.3",
         "babel-preset-minify": "^0.5.2",
         "chalk": "^5.2.0",
